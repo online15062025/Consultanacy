@@ -1,34 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abroad Job - Premium International Recruitment Solutions</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Abroad Job Portal - Premium International Recruitment Solutions</title>
     <style>
-        
-* {
+        * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    --text-primary: #2c3e50;
-    --text-secondary: #7f8c8d;
-    --text-light: #ecf0f1;
+    --primary-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    --secondary-gradient: linear-gradient(135deg, #34D399 0%, #059669 100%);
+    --accent-gradient: linear-gradient(135deg, #10B981 0%, #047857 100%);
+    --dark-gradient: linear-gradient(135deg, #064E3B 0%, #065F46 100%);
+    --text-primary: #1F2937;
+    --text-secondary: #6B7280;
+    --text-light: #F9FAFB;
     --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --border-color: #e2e8f0;
-    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
-    --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --bg-secondary: #F0FDF4;
+    --border-color: #D1FAE5;
+    --shadow-light: 0 4px 6px rgba(16, 185, 129, 0.1);
+    --shadow-medium: 0 10px 25px rgba(16, 185, 129, 0.15);
+    --shadow-heavy: 0 20px 60px rgba(16, 185, 129, 0.2);
     --border-radius: 12px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -53,14 +50,17 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     line-height: 1.3;
 }
 
 .gradient-text {
-    background: var(--secondary-gradient);
+    background: var(--bg-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -96,13 +96,20 @@ h1, h2, h3, h4 {
 .logo-icon {
     width: 48px;
     height: 48px;
-    background: var(--primary-gradient);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 20px;
+    overflow: hidden;
+    background: white;
+    padding: 4px;
+    box-shadow: var(--shadow-light);
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .logo-text h2 {
@@ -205,6 +212,7 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero-background {
@@ -238,7 +246,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.9) 100%);
+    background: var(--primary-gradient);
     z-index: 2;
 }
 
@@ -266,10 +274,10 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .title-line {
@@ -277,12 +285,13 @@ h1, h2, h3, h4 {
 }
 
 .hero-subtitle {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     margin-bottom: 3rem;
     opacity: 0.9;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 400;
 }
 
 .hero-actions {
@@ -293,7 +302,8 @@ h1, h2, h3, h4 {
     flex-wrap: wrap;
 }
 
-.primary-btn, .secondary-btn {
+.primary-btn,
+.secondary-btn {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -320,36 +330,41 @@ h1, h2, h3, h4 {
     backdrop-filter: blur(10px);
 }
 
-.primary-btn:hover, .secondary-btn:hover {
+.primary-btn:hover,
+.secondary-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-heavy);
 }
 
 .hero-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .stat-item {
     text-align: center;
+    padding: 0.5rem;
 }
 
 .stat-number {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    background: var(--bg-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1;
+    display: block;
 }
 
 .stat-label {
-    font-size: 1rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     opacity: 0.8;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
+    font-weight: 400;
 }
 
 .stat-divider {
@@ -377,9 +392,22 @@ h1, h2, h3, h4 {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(-45deg); }
-    40% { transform: translateY(-10px) rotate(-45deg); }
-    60% { transform: translateY(-5px) rotate(-45deg); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    40% {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    60% {
+        transform: translateY(-5px) rotate(-45deg);
+    }
 }
 
 /* Services Selection */
@@ -394,16 +422,18 @@ h1, h2, h3, h4 {
 }
 
 .section-header h2 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 2.8rem);
     margin-bottom: 1rem;
     color: var(--text-primary);
+    font-weight: 600;
 }
 
 .section-header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    font-weight: 400;
 }
 
 .service-cards {
@@ -668,17 +698,17 @@ h1, h2, h3, h4 {
 .world-map {
     position: relative;
     height: 500px;
-    background: url("data:image/png;base64,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") no-repeat center;
+    background: url("https://firebasestorage.googleapis.com/v0/b/digitalsignature-af550.appspot.com/o/world_map.png?alt=media&token=d8458ed2-9e71-4b8f-b10f-77406a9a6df4") no-repeat center;
     background-size: cover;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: var(--shadow-heavy);
+    
 }
 
 .country-pin {
     position: absolute;
     cursor: pointer;
-    transition: var(--transition);
+    transition: var(--primary-gradient);
 }
 
 .pin-pulse {
@@ -695,9 +725,17 @@ h1, h2, h3, h4 {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(0, 242, 254, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(0, 242, 254, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+    }
 }
 
 .pin-content {
@@ -734,11 +772,30 @@ h1, h2, h3, h4 {
 }
 
 /* Country positions */
-.uae { top: 45%; left: 58%; }
-.saudi { top: 55%; left: 50%; }
-.qatar { top: 63%; left: 53%; }
-.oman { top: 70%; left: 55%; }
-.kuwait { top: 50%; left: 52%; }
+.uae {
+    top: 45%;
+    left: 58%;
+}
+
+.saudi {
+    top: 55%;
+    left: 50%;
+}
+
+.qatar {
+    top: 63%;
+    left: 53%;
+}
+
+.oman {
+    top: 70%;
+    left: 55%;
+}
+
+.kuwait {
+    top: 50%;
+    left: 52%;
+}
 
 .map-info h3 {
     font-size: 2rem;
@@ -1084,14 +1141,14 @@ h1, h2, h3, h4 {
     .nav-cta .contact-info {
         display: none;
     }
-    
+
     .about-grid,
     .map-section,
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1101,7 +1158,7 @@ h1, h2, h3, h4 {
     .mobile-toggle {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1116,75 +1173,76 @@ h1, h2, h3, h4 {
         padding: 3rem 0;
         transition: left 0.3s ease;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .nav-cta {
         display: none;
     }
-    
+
     .hero {
         min-height: 80vh;
     }
-    
+
     .hero-actions {
         flex-direction: column;
         align-items: center;
     }
-    
-    .primary-btn, .secondary-btn {
+
+    .primary-btn,
+    .secondary-btn {
         width: 100%;
         max-width: 300px;
     }
-    
+
     .hero-stats {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .stat-divider {
         display: none;
     }
-    
+
     .service-cards {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .features {
         gap: 1.5rem;
     }
-    
+
     .metrics {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .world-map {
         height: 300px;
     }
-    
+
     .contact-methods {
         gap: 1.5rem;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
     }
-    
+
     .modal-content {
         width: 95%;
         margin: 5% auto;
     }
-    
+
     .modal-header,
     .modal-form {
         padding-left: 2rem;
@@ -1196,38 +1254,231 @@ h1, h2, h3, h4 {
     .container {
         padding: 0 16px;
     }
-    
+
     .nav-container {
         padding: 1rem 16px;
     }
-    
+
     .services-selection,
     .about,
     .countries,
     .contact {
         padding: 80px 0;
     }
-    
+
     .service-card {
         padding: 2rem 1.5rem;
     }
-    
+
     .contact-form-container {
         padding: 2rem 1.5rem;
     }
-    
+
     .hero-content {
         padding: 0 16px;
     }
-    
+
     .section-header h2 {
         font-size: 2.5rem;
     }
-    
+
     .about h2,
     .contact-info h2 {
         font-size: 2.5rem;
     }
+}
+
+/* Bottom Navigation - Mobile Only */
+.bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-color);
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem;
+}
+
+.bottom-nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary-gradient);
+}
+
+.bottom-nav-item:hover,
+.bottom-nav-item.active {
+    color: #25D366;
+}
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: block;
+    }
+    
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+/* Floating Action Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    left: 90%;
+    z-index: 1500;
+}
+
+
+
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .floating-buttons {
+        position: fixed;
+        left: 80%;
+        z-index: 1500;
+    }
+
+    .floating-buttons{
+        margin-bottom: 30%;
+    }
+}
+
+
+
+/* Gallery Section */
+.gallery {
+    padding: 100px 0;
+    background: white;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 300px;
+    max-width: 350px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Expandable Footer */
+.footer-expandable {
+    background: var(--dark-gradient);
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer-toggle {
+    width: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-toggle:hover {
+    border-color: #25D366;
+    background: rgba(37, 211, 102, 0.1);
+}
+
+.footer-links {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-expandable.active .footer-links {
+    display: grid;
+}
+
+.footer-column h4 {
+    color: #25D366;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-column ul li a:hover {
+    color: #25D366;
 }
 
 /* Loading and Animation Classes */
@@ -1253,38 +1504,95 @@ h1, h2, h3, h4 {
     opacity: 1;
 }
 
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fab {
+    width: 50px;
+    height: 50px;
+    background-color: #25D366; /* Default WhatsApp green */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.fab-container i{
+    font-size: 20px;
+    padding-top: 12px;
+}
+
+.fab-container{
+    text-align: center;
+}
+
+
+
+.fab:hover {
+    transform: scale(1.1);
+}
+
+/* Specific styles for WhatsApp and Call button */
+.whatsapp-fab {
+    background-color: #25D366;
+}
+
+.call-fab {
+    background-color: #34b7f1;
+}
+
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <i class="fas fa-globe-europe"></i>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/digitalsignature-af550.appspot.com/o/files%2Fconsultancy_logo.PNG?alt=media&token=1984e175-c244-4aeb-a9ce-cde59d7f30e8" alt="Abroad Jobs Logo">
                 </div>
                 <div class="logo-text">
-                    <h2>Abroad Job</h2>
+                    <h2>Abroad Jobs</h2>
                     <span>PORTAL</span>
                 </div>
             </div>
-            
+
             <div class="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#countries" class="nav-link">Global Reach</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            
+
             <div class="nav-cta">
                 <div class="contact-info">
                     <i class="fas fa-phone"></i>
-                    <span>+91 9999 999 999</span>
+                    <span>+91 99999999999</span>
                 </div>
                 <button class="cta-button" onclick="openJobSeekerForm()">Get Started</button>
             </div>
-            
+
             <div class="mobile-toggle">
                 <span></span>
                 <span></span>
@@ -1296,28 +1604,34 @@ h1, h2, h3, h4 {
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
+            <div class="hero-slide active"
+                style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')">
+            </div>
         </div>
         <div class="hero-overlay"></div>
-        
+
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-award"></i>
                 <span>Premium Recruitment Excellence</span>
             </div>
-            
+
             <h1 class="hero-title">
                 <br>
                 <span class="title-line">Elevating Careers</span>
                 <span class="title-line gradient-text">Globally</span>
             </h1>
-            
+
             <p class="hero-subtitle">
                 Where exceptional talent meets extraordinary opportunities across 15+ international markets
             </p>
-            
+
             <div class="hero-actions">
                 <button class="primary-btn" onclick="openJobSeekerForm()">
                     <span>Find Your Dream Job</span>
@@ -1328,26 +1642,27 @@ h1, h2, h3, h4 {
                     <i class="fas fa-users"></i>
                 </button>
             </div>
-            
+
             <div class="hero-stats">
                 <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years in Business</div>
+                </div>
+                <div class="stat-item">
                     <div class="stat-number">5000+</div>
-                    <div class="stat-label">Success Stories</div>
+                    <div class="stat-label">Promises Delivered</div>
                 </div>
-                <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Global Partners</div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Countries Served</div>
                 </div>
-                <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Placement Rate</div>
-                   
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Teams</div>
                 </div>
             </div>
         </div>
-        
+
         <div class="scroll-indicator">
             <div class="scroll-arrow"></div>
         </div>
@@ -1360,7 +1675,7 @@ h1, h2, h3, h4 {
                 <h2>How May We Assist You?</h2>
                 <p>Choose your path to professional excellence</p>
             </div>
-            
+
             <div class="service-cards">
                 <div class="service-card job-seeker" onclick="openJobSeekerForm()">
                     <div class="card-background"></div>
@@ -1381,7 +1696,7 @@ h1, h2, h3, h4 {
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="service-card employer" onclick="openEmployerForm()">
                     <div class="card-background"></div>
                     <div class="card-content">
@@ -1412,8 +1727,9 @@ h1, h2, h3, h4 {
                 <div class="about-content">
                     <div class="section-badge">Excellence Since 2010</div>
                     <h2>Redefining Global Recruitment Standards</h2>
-                    <p class="lead">We are the premier destination for international career advancement, connecting exceptional talent with world-class opportunities across multiple continents.</p>
-                    
+                    <p class="lead">We are the premier destination for international career advancement, connecting
+                        exceptional talent with world-class opportunities across multiple continents.</p>
+
                     <div class="features">
                         <div class="feature">
                             <div class="feature-icon">
@@ -1424,7 +1740,7 @@ h1, h2, h3, h4 {
                                 <p>Rigorous vetting process ensuring quality matches</p>
                             </div>
                         </div>
-                        
+
                         <div class="feature">
                             <div class="feature-icon">
                                 <i class="fas fa-handshake"></i>
@@ -1434,7 +1750,7 @@ h1, h2, h3, h4 {
                                 <p>Long-term relationships with industry leaders</p>
                             </div>
                         </div>
-                        
+
                         <div class="feature">
                             <div class="feature-icon">
                                 <i class="fas fa-chart-line"></i>
@@ -1446,7 +1762,7 @@ h1, h2, h3, h4 {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="about-visual">
                     <div class="visual-card">
                         <div class="card-header">
@@ -1479,7 +1795,7 @@ h1, h2, h3, h4 {
                 <h2>Our Global Network</h2>
                 <p>Connecting talent across continents with precision and care</p>
             </div>
-            
+
             <div class="map-section">
                 <div class="map-container">
                     <div class="world-map">
@@ -1490,7 +1806,7 @@ h1, h2, h3, h4 {
                                 <span class="job-count">2500+ Jobs</span>
                             </div>
                         </div>
-                        
+
                         <div class="country-pin saudi" data-country="Saudi Arabia">
                             <div class="pin-pulse"></div>
                             <div class="pin-content">
@@ -1498,7 +1814,7 @@ h1, h2, h3, h4 {
                                 <span class="job-count">1800+ Jobs</span>
                             </div>
                         </div>
-                        
+
                         <div class="country-pin qatar" data-country="Qatar">
                             <div class="pin-pulse"></div>
                             <div class="pin-content">
@@ -1506,7 +1822,7 @@ h1, h2, h3, h4 {
                                 <span class="job-count">1200+ Jobs</span>
                             </div>
                         </div>
-                        
+
                         <div class="country-pin oman" data-country="Oman">
                             <div class="pin-pulse"></div>
                             <div class="pin-content">
@@ -1514,7 +1830,7 @@ h1, h2, h3, h4 {
                                 <span class="job-count">900+ Jobs</span>
                             </div>
                         </div>
-                        
+
                         <div class="country-pin kuwait" data-country="Kuwait">
                             <div class="pin-pulse"></div>
                             <div class="pin-content">
@@ -1524,11 +1840,12 @@ h1, h2, h3, h4 {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="map-info">
                     <h3>Strategic Placement Excellence</h3>
-                    <p>Our extensive network spans the most dynamic economies in the Middle East, offering unparalleled opportunities for career growth and business expansion.</p>
-                    
+                    <p>Our extensive network spans the most dynamic economies in the Middle East, offering unparalleled
+                        opportunities for career growth and business expansion.</p>
+
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
@@ -1544,14 +1861,46 @@ h1, h2, h3, h4 {
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Success Gallery</h2>
+                <p>Celebrating moments of career transformations and business growth</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/5d/10/8f/5d108f708cb9d480982e6c6377a86756.jpg" alt="Saudi Arabia">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/1b/b2/5a/1bb25a115df052348a95c34a78ab27c9.jpg" alt="Australia">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/3a/b9/78/3ab978dab72cf16299d96543ce520686.jpg" alt="New York">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/ba/0a/86/ba0a86c922dbbf389025a62217bbb5ac.jpg" alt="London">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/0a/42/b9/0a42b930aba89d3c49fc1f270d8fbff1.jpg" alt="Oman">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/ec/46/85/ec468510610b12498a447f5aa37c424b.jpg" alt="International Opportunities">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
                     <h2>Let's Start Your Journey</h2>
-                    <p>Ready to take the next step? Our team of experts is here to guide you through every stage of your international career transition.</p>
-                    
+                    <p>Ready to take the next step? Our team of experts is here to guide you through every stage of your
+                        international career transition.</p>
+
                     <div class="contact-methods">
                         <div class="contact-method">
                             <div class="method-icon">
@@ -1559,10 +1908,10 @@ h1, h2, h3, h4 {
                             </div>
                             <div class="method-details">
                                 <h4>Visit Our Office</h4>
-                                <p>Abroad Job Headquarters<br>Business District, International City</p>
+                                <p>Abroad Job Portal Headquarters<br>Business District, International City</p>
                             </div>
                         </div>
-                        
+
                         <div class="contact-method">
                             <div class="method-icon">
                                 <i class="fas fa-envelope"></i>
@@ -1572,7 +1921,7 @@ h1, h2, h3, h4 {
                                 <p>info@abroadjob.com<br>careers@abroadjob.com</p>
                             </div>
                         </div>
-                        
+
                         <div class="contact-method">
                             <div class="method-icon">
                                 <i class="fas fa-clock"></i>
@@ -1584,7 +1933,7 @@ h1, h2, h3, h4 {
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form-container">
                     <form class="contact-form">
                         <h3>Send us a Message</h3>
@@ -1596,15 +1945,15 @@ h1, h2, h3, h4 {
                                 <input type="text" placeholder="Last Name" required>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <input type="email" placeholder="Email Address" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <input type="tel" placeholder="Phone Number" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <select required>
                                 <option value="">Select Service Type</option>
@@ -1614,11 +1963,11 @@ h1, h2, h3, h4 {
                                 <option value="other">Other Inquiry</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <textarea placeholder="Tell us about your requirements..." rows="4" required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="submit-btn">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
@@ -1630,47 +1979,65 @@ h1, h2, h3, h4 {
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer-expandable">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section brand">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-globe-europe"></i>
-                        </div>
-                        <div class="logo-text">
-                            <h3>Abroad Job</h3>
-                            <span>Premium Recruitment Solutions</span>
-                        </div>
-                    </div>
-                    <p>Connecting exceptional talent with extraordinary opportunities worldwide. Your success is our mission.</p>
-                </div>
-                
-                <div class="footer-section">
+            <button class="footer-toggle" onclick="toggleFooter()">
+                <span>Explore More Links</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            
+            <div class="footer-links">
+                <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
                         <li><a href="#">Executive Search</a></li>
                         <li><a href="#">International Placement</a></li>
                         <li><a href="#">Career Consulting</a></li>
                         <li><a href="#">Visa Assistance</a></li>
+                        <li><a href="#">HR Solutions</a></li>
+                        <li><a href="#">Talent Management</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
+                <div class="footer-column">
+                    <h4>Industries</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#countries">Global Reach</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">Engineering</a></li>
+                        <li><a href="#">Oil & Gas</a></li>
+                        <li><a href="#">Construction</a></li>
                     </ul>
                 </div>
                 
-
+                <div class="footer-column">
+                    <h4>Countries</h4>
+                    <ul>
+                        <li><a href="#">United Arab Emirates</a></li>
+                        <li><a href="#">Saudi Arabia</a></li>
+                        <li><a href="#">Qatar</a></li>
+                        <li><a href="#">Kuwait</a></li>
+                        <li><a href="#">Oman</a></li>
+                        <li><a href="#">Bahrain</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Abroad Job. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 Abroad Job Portal. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1682,7 +2049,7 @@ h1, h2, h3, h4 {
                 <h2>Career Application</h2>
                 <span class="close" onclick="closeModal('jobSeekerModal')">&times;</span>
             </div>
-            
+
             <form class="modal-form">
                 <div class="form-row">
                     <div class="form-group">
@@ -1692,7 +2059,7 @@ h1, h2, h3, h4 {
                         <input type="email" placeholder="Email Address" required>
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <input type="tel" placeholder="Phone Number" required>
@@ -1708,11 +2075,11 @@ h1, h2, h3, h4 {
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <input type="text" placeholder="Current Job Title" required>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <input type="number" placeholder="Years of Experience" required>
@@ -1729,11 +2096,12 @@ h1, h2, h3, h4 {
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                    <textarea placeholder="Brief description of your skills and career goals..." rows="4" required></textarea>
+                    <textarea placeholder="Brief description of your skills and career goals..." rows="4"
+                        required></textarea>
                 </div>
-                
+
                 <button type="submit" class="submit-btn">
                     <span>Submit Application</span>
                     <i class="fas fa-arrow-right"></i>
@@ -1748,7 +2116,7 @@ h1, h2, h3, h4 {
                 <h2>Talent Acquisition Request</h2>
                 <span class="close" onclick="closeModal('employerModal')">&times;</span>
             </div>
-            
+
             <form class="modal-form">
                 <div class="form-row">
                     <div class="form-group">
@@ -1758,7 +2126,7 @@ h1, h2, h3, h4 {
                         <input type="text" placeholder="Contact Person" required>
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <input type="email" placeholder="Company Email" required>
@@ -1767,7 +2135,7 @@ h1, h2, h3, h4 {
                         <input type="tel" placeholder="Contact Number" required>
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <select required>
@@ -1791,7 +2159,7 @@ h1, h2, h3, h4 {
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <input type="text" placeholder="Position Title" required>
@@ -1800,16 +2168,55 @@ h1, h2, h3, h4 {
                         <input type="number" placeholder="Number of Positions" required>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                    <textarea placeholder="Job requirements, qualifications, and company details..." rows="4" required></textarea>
+                    <textarea placeholder="Job requirements, qualifications, and company details..." rows="4"
+                        required></textarea>
                 </div>
-                
+
                 <button type="submit" class="submit-btn">
                     <span>Submit Request</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </form>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation - Mobile Only -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-container">
+            <a href="#home" class="bottom-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#about" class="bottom-nav-item">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="#services" class="bottom-nav-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Services</span>
+            </a>
+            <a href="#gallery" class="bottom-nav-item">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </a>
+            <a href="#contact" class="bottom-nav-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <div class="fab-container">
+            <a href="https://wa.me/99999999999" target="_blank" class="fab whatsapp-fab" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="tel:+99999999999" class="fab call-fab" title="Call Us">
+                <i class="fas fa-phone"></i>
+            </a>
         </div>
     </div>
 
@@ -1821,9 +2228,9 @@ let isMenuOpen = false;
 function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     const mobileToggle = document.querySelector('.mobile-toggle');
-    
+
     isMenuOpen = !isMenuOpen;
-    
+
     if (isMenuOpen) {
         navMenu.classList.add('active');
         mobileToggle.classList.add('active');
@@ -1839,13 +2246,13 @@ function toggleMobileMenu() {
 function initHeroSlider() {
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
-    
+
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
     }
-    
+
     // Change slide every 6 seconds
     setInterval(nextSlide, 6000);
 }
@@ -1853,24 +2260,24 @@ function initHeroSlider() {
 // Smooth Scrolling
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            
+
             if (target) {
                 const headerHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = target.offsetTop - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
+
                 // Close mobile menu if open
                 if (isMenuOpen) {
                     toggleMobileMenu();
                 }
-                
+
                 // Update active nav link
                 updateActiveNavLink(this.getAttribute('href'));
             }
@@ -1883,7 +2290,7 @@ function updateActiveNavLink(targetHref) {
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
     });
-    
+
     document.querySelector(`a[href="${targetHref}"]`)?.classList.add('active');
 }
 
@@ -1891,22 +2298,22 @@ function updateActiveNavLink(targetHref) {
 function initScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     function updateActiveLink() {
         const scrollPos = window.scrollY + 100;
-        
+
         sections.forEach(section => {
             const top = section.offsetTop;
             const bottom = top + section.offsetHeight;
             const id = section.getAttribute('id');
-            
+
             if (scrollPos >= top && scrollPos < bottom) {
                 navLinks.forEach(link => link.classList.remove('active'));
                 document.querySelector(`a[href="#${id}"]`)?.classList.add('active');
             }
         });
     }
-    
+
     window.addEventListener('scroll', updateActiveLink);
     updateActiveLink(); // Initial call
 }
@@ -1914,7 +2321,7 @@ function initScrollSpy() {
 // Navbar Background on Scroll
 function initNavbarScroll() {
     const navbar = document.querySelector('.navbar');
-    
+
     function updateNavbar() {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
@@ -1924,7 +2331,7 @@ function initNavbarScroll() {
             navbar.style.boxShadow = 'none';
         }
     }
-    
+
     window.addEventListener('scroll', updateNavbar);
     updateNavbar(); // Initial call
 }
@@ -1935,7 +2342,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1943,7 +2350,7 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observe elements for animation
     document.querySelectorAll('.service-card, .feature, .metric, .contact-method').forEach(el => {
         el.classList.add('fade-in');
@@ -1954,11 +2361,11 @@ function initScrollAnimations() {
 // Counter Animation
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number, .metric .number');
-    
+
     const observerOptions = {
         threshold: 0.5
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -1967,7 +2374,7 @@ function animateCounters() {
             }
         });
     }, observerOptions);
-    
+
     counters.forEach(counter => observer.observe(counter));
 }
 
@@ -1977,7 +2384,7 @@ function animateCounter(element) {
     const duration = 2000;
     const increment = target / (duration / 16);
     let current = 0;
-    
+
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -2001,7 +2408,7 @@ function openJobSeekerForm() {
     const modal = document.getElementById('jobSeekerModal');
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
+
     // Add animation
     setTimeout(() => {
         modal.querySelector('.modal-content').style.transform = 'scale(1)';
@@ -2013,7 +2420,7 @@ function openEmployerForm() {
     const modal = document.getElementById('employerModal');
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
+
     // Add animation
     setTimeout(() => {
         modal.querySelector('.modal-content').style.transform = 'scale(1)';
@@ -2024,10 +2431,10 @@ function openEmployerForm() {
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     const modalContent = modal.querySelector('.modal-content');
-    
+
     modalContent.style.transform = 'scale(0.9)';
     modalContent.style.opacity = '0';
-    
+
     setTimeout(() => {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
@@ -2059,30 +2466,30 @@ document.addEventListener('keydown', function(event) {
 // Form Submissions
 function initFormHandling() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.innerHTML;
-            
+
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
+
             // Simulate form submission
             setTimeout(() => {
                 // Show success message
                 showNotification('Thank you! Your message has been sent successfully. We will contact you soon.', 'success');
-                
+
                 // Reset form
                 this.reset();
-                
+
                 // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                
+
                 // Close modal if it's a modal form
                 if (this.closest('.modal')) {
                     const modal = this.closest('.modal');
@@ -2104,7 +2511,7 @@ function showNotification(message, type = 'info') {
             <button class="close-notification">&times;</button>
         </div>
     `;
-    
+
     // Add styles
     notification.style.cssText = `
         position: fixed;
@@ -2120,19 +2527,19 @@ function showNotification(message, type = 'info') {
         max-width: 400px;
         border-left: 4px solid #10b981;
     `;
-    
+
     document.body.appendChild(notification);
-    
+
     // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Close button
     notification.querySelector('.close-notification').addEventListener('click', () => {
         closeNotification(notification);
     });
-    
+
     // Auto close after 5 seconds
     setTimeout(() => {
         closeNotification(notification);
@@ -2151,23 +2558,39 @@ function closeNotification(notification) {
 // Country Pin Interactions
 function initCountryPins() {
     const pins = document.querySelectorAll('.country-pin');
-    
+
     pins.forEach(pin => {
         pin.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.2)';
             this.style.zIndex = '10';
         });
-        
+
         pin.addEventListener('mouseleave', function() {
             this.style.transform = 'scale(1)';
             this.style.zIndex = '1';
         });
-        
+
         pin.addEventListener('click', function() {
             const country = this.getAttribute('data-country');
             showNotification(`Explore opportunities in ${country}. Contact us for more details!`, 'info');
         });
     });
+}
+
+
+
+// Footer Toggle Function
+function toggleFooter() {
+    const footer = document.querySelector('.footer-expandable');
+    const toggleIcon = document.querySelector('.footer-toggle i');
+    
+    footer.classList.toggle('active');
+    
+    if (footer.classList.contains('active')) {
+        toggleIcon.style.transform = 'rotate(180deg)';
+    } else {
+        toggleIcon.style.transform = 'rotate(0deg)';
+    }
 }
 
 // Initialize everything when DOM is loaded
@@ -2181,32 +2604,33 @@ document.addEventListener('DOMContentLoaded', function() {
     animateCounters();
     initFormHandling();
     initCountryPins();
-    
+
+
     // Mobile menu toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
     if (mobileToggle) {
         mobileToggle.addEventListener('click', toggleMobileMenu);
     }
-    
+
     // Initialize modal animations
     document.querySelectorAll('.modal-content').forEach(content => {
         content.style.transform = 'scale(0.9)';
         content.style.opacity = '0';
         content.style.transition = 'all 0.2s ease';
     });
-    
+
     // Preload hero images
     const heroImages = [
         'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
         'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     ];
-    
+
     heroImages.forEach(src => {
         const img = new Image();
         img.src = src;
     });
-    
+
     // Remove loading class if it exists
     document.body.classList.remove('loading');
 });
@@ -2237,40 +2661,41 @@ window.addEventListener('scroll', throttle(function() {
     // Scroll-dependent functions go here
 }, 16)); // ~60fps
 
-// Disable right-click context menu
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
 
-// Disable specific key combinations
-document.addEventListener('keydown', function(e) {
-    // Prevent F12, Ctrl+Shift+I/J/C/U, Ctrl+S, Ctrl+U, Ctrl+P, Ctrl+Shift+C, Ctrl+Shift+J
-    if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
-        (e.ctrlKey && (e.keyCode === 83 || e.keyCode === 85 || e.keyCode === 80)) // Ctrl+S/U/P
-    ) {
-        e.preventDefault();
-    }
-});
+        // Disable specific key combinations
+        document.addEventListener('keydown', function(e) {
+            // Prevent F12, Ctrl+Shift+I/J/C/U, Ctrl+S, Ctrl+U, Ctrl+P, Ctrl+Shift+C, Ctrl+Shift+J
+            if (
+                e.keyCode === 123 || // F12
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
+                (e.ctrlKey && (e.keyCode === 83 || e.keyCode === 85 || e.keyCode === 80)) // Ctrl+S/U/P
+            ) {
+                e.preventDefault();
+            }
+        });
 
-// Disable page print
-window.addEventListener("beforeprint", function(e) {
-    alert("Printing is disabled on this webpage.");
-    e.preventDefault();
-});
+        // Disable page print
+        window.addEventListener("beforeprint", function(e) {
+            alert("Printing is disabled on this webpage.");
+            e.preventDefault();
+        });
 
-// Try to block dragging (saving images etc.)
-document.addEventListener('dragstart', function(e) {
-    e.preventDefault();
-});
+        // Try to block dragging (saving images etc.)
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
 
-// Additional — block copy
-document.addEventListener('copy', function(e) {
-    e.preventDefault();
-    alert('Copying is disabled on this page.');
-});
+        // Additional — block copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('Copying is disabled on this page.');
+        });
 
     </script>
 </body>
+
 </html>
