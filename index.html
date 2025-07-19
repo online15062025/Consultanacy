@@ -80,6 +80,10 @@
             transition: var(--transition);
         }
 
+        .bottom-nav {
+            transition: transform 0.4s ease;
+        }
+
         .nav-container {
             display: flex;
             align-items: center;
@@ -700,7 +704,7 @@
         .world-map {
             position: relative;
             height: 500px;
-            background: url("https://firebasestorage.googleapis.com/v0/b/digitalsignature-af550.appspot.com/o/world_map.png?alt=media&token=d8458ed2-9e71-4b8f-b10f-77406a9a6df4") no-repeat center;
+            background: url("https://firebasestorage.googleapis.com/v0/b/digitalsignature-af550.appspot.com/o/worldMapHd.png?alt=media&token=50ed6c7e-c8b1-4238-b43f-e78ed02f5ff7") no-repeat center;
             background-size: cover;
             border-radius: 24px;
             overflow: hidden;
@@ -720,7 +724,7 @@
             transform: translate(-50%, -50%);
             width: 20px;
             height: 20px;
-            background: #00f2fe;
+            background: var(--primary-gradient);
             border-radius: 50%;
             box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
             animation: pulse 2s infinite;
@@ -873,10 +877,10 @@
         }
 
         .contact-info p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 3rem;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
         }
 
         .contact-methods {
@@ -1671,7 +1675,6 @@
                 </div>
                 <div class="logo-text">
                     <h2>Migrate Hub</h2>
-                    <span>Careers</span>
                 </div>
             </div>
 
@@ -2826,12 +2829,39 @@
             }
         }
 
+        let scrollTimeout;
+        let lastScrollPosition = 0;
+
+        function hideNavbars() {
+            const navbar = document.querySelector('.navbar');
+            const bottomNav = document.querySelector('.bottom-nav');
+            if (navbar) navbar.style.transform = 'translateY(-100%)';
+            if (bottomNav) bottomNav.style.transform = 'translateY(100%)';
+        }
+
+        function showNavbars() {
+            const navbar = document.querySelector('.navbar');
+            const bottomNav = document.querySelector('.bottom-nav');
+            if (navbar) navbar.style.transform = 'translateY(0)';
+            if (bottomNav) bottomNav.style.transform = 'translateY(0)';
+        }
+
+        window.addEventListener('scroll', () => {
+            hideNavbars();
+
+            // Clear any previous timeout
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+
+            // Set new timeout to show navbars after 800ms of no scroll
+            scrollTimeout = setTimeout(() => {
+                showNavbars();
+            }, 800);
+        });
+
         // Apply throttling to scroll events
         window.addEventListener('scroll', throttle(function() {
             // Scroll-dependent functions go here
         }, 16)); // ~60fps
-
-        type();
 
         // Disable right-click context menu
         document.addEventListener('contextmenu', function(e) {
@@ -2867,6 +2897,7 @@
             alert('Copying is disabled on this page.');
         });
 
+        type();
     </script>
 </body>
 
