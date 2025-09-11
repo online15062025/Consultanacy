@@ -13,6 +13,7 @@
 }
 
 :root {
+    --basic-gradient: linear-gradient(45deg, #187E5F 0%, #0B5844 30%, #043a2a 55%, #02341d 75%, #187E5F 100%); 
     --primary-gradient: linear-gradient(135deg, #187E5F 0%, #0B5844 100%);
     --secondary-gradient: linear-gradient(135deg, #187E5F 0%, #00381F 100%);
     --accent-gradient: linear-gradient(135deg, #0B5844 0%, #00381F 100%);
@@ -33,10 +34,6 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-}
-
-#company_name{
-    display: none;
 }
 
 body {
@@ -83,8 +80,6 @@ h4 {
     z-index: 1000;
     transition: var(--transition);
 }
-
-
 
 .bottom-nav {
     transition: transform 0.4s ease;
@@ -236,8 +231,6 @@ h4 {
     z-index: 1;
 }
 
-
-
 .hero-slide {
     position: absolute;
     top: 0;
@@ -246,7 +239,7 @@ h4 {
     height: 100%;
     background-size: cover;
     background-position: center;
-    
+    opacity: 0;
     transition: opacity 2s ease-in-out;
 }
 
@@ -260,7 +253,7 @@ h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-gradient);
+    background: var(--basic-gradient);
     z-index: 2;
 }
 
@@ -316,12 +309,6 @@ h4 {
     flex-wrap: wrap;
 }
 
-
-
-
-
-
-
 .primary-btn,
 .secondary-btn {
     display: flex;
@@ -374,7 +361,7 @@ h4 {
     font-weight: 600;
     background: var(--bg-primary);
     -webkit-background-clip: text;
-
+    -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1;
     display: block;
@@ -1355,7 +1342,7 @@ h4 {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-top: 1px solid var(--border-color);
-    padding: 0.4rem;
+    padding: 1rem;
     z-index: 1000;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -1426,7 +1413,6 @@ h4 {
         max-width: 100vw;
     }
 
-
     .hero-badge {
         display: inline-flex;
         align-items: center;
@@ -1480,14 +1466,8 @@ h4 {
     }
 
     .nav-container {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: transparent; /* Fully transparent */
-        backdrop-filter: none;   /* Optional: remove blur */
-        border-bottom: none;     /* Optional: remove border */
-        z-index: 1000;
-        transition: all 0.3s ease;
+        padding: 1rem 16px;
+        max-width: 100%;
     }
 
     .hero-actions {
@@ -1502,53 +1482,7 @@ h4 {
         padding: 12px 24px;
         font-size: 0.9rem;
     }
-
-    .lead {
-        font-size: 1rem;
-        color: var(--text-secondary);
-        margin-bottom: 3rem;
-        line-height: 1.6;
-    }
-
-    /* Sai */
-
-.hero-title{
-    color: black;
 }
-
-.hero-subtitle{
-    color: black;
-}
-
-.secondary-btn{
-    background-color: #00381F;
-}
-
-/* Sai Background image  https://i.pinimg.com/736x/e3/d5/32/e3d532600058d635982c0f3b00c00dd3.jpg */
-.hero-overlay {
-    background: 
-         url('https://firebasestorage.googleapis.com/v0/b/digitalsignature-af550.appspot.com/o/eiffel_tower-removebg-preview.png?alt=media&token=8c317aec-b7fe-4c9b-b072-fc9f2f15752b') center/cover no-repeat, 
-        linear-gradient(135deg, #187E5F 0%, #0B5844 100%);
-    opacity: 0.85; /* optional */
-}
-
-.gradient-text {
-    background: black;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-stats{
-    color: black;
-}
-
-
-/* Sai */
-
-}
-
-
 
 /* Gallery Section */
 .gallery {
@@ -1587,7 +1521,6 @@ h4 {
 .gallery-item:hover img {
     transform: scale(1.05);
 }
-
 
 /* Expandable Footer */
 .footer-expandable {
@@ -1723,6 +1656,293 @@ h4 {
 .call-fab {
     background-color: #0B5844;
 }
+
+
+/* Upload Resume Styles */
+.upload-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.upload-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.upload-group .required {
+    color: red;
+    font-weight: bold;
+}
+
+.upload-group input[type="file"] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.upload-group input[type="file"]:hover {
+    border-color: #007bff;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-top: 12px;
+    width: 100%;
+    background: #eaeaea;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 0%;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    transition: width 0.4s ease;
+    border-radius: 20px;
+}
+/* Overseas Placement Steps - Vertical Timeline */
+#overseas_placement_steps {
+padding: 120px 0;
+background: var(--bg-secondary);
+}
+
+#overseas_placement_steps .container {
+max-width: 1000px;
+margin: 0 auto;
+padding: 0 24px;
+}
+
+#overseas_placement_steps h2 {
+font-size: clamp(2rem, 4vw, 2.8rem);
+margin-bottom: 3rem;
+text-align: center;
+color: var(--text-primary);
+font-weight: 600;
+}
+
+.timeline {
+position: relative;
+margin: 0 auto;
+padding: 0;
+list-style: none;
+max-width: 800px;
+}
+
+.timeline::before {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+left: 30px;
+width: 4px;
+background: var(--primary-gradient);
+border-radius: 2px;
+}
+
+.timeline-item {
+position: relative;
+margin-bottom: 3rem;
+padding-left: 80px;
+}
+
+.timeline-item:last-child {
+margin-bottom: 0;
+}
+
+.timeline-marker {
+position: absolute;
+left: 14px;
+top: 0;
+width: 32px;
+height: 32px;
+border-radius: 50%;
+background: var(--primary-gradient);
+color: white;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: var(--shadow-light);
+}
+
+.timeline-content {
+background: white;
+border-radius: var(--border-radius);
+padding: 1.5rem 2rem;
+box-shadow: var(--shadow-light);
+border: 1px solid var(--border-color);
+transition: var(--transition);
+}
+
+.timeline-content:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-medium);
+}
+
+.timeline-content h4 {
+font-size: 1.2rem;
+margin-bottom: 0.5rem;
+color: var(--text-primary);
+}
+
+.timeline-content p {
+color: var(--text-secondary);
+font-size: 1rem;
+line-height: 1.6;
+}
+/* Animate the timeline line */
+.timeline::before {
+content: '';
+position: absolute;
+top: 0;
+left: 30px;
+width: 4px;
+height: 0; /* start collapsed */
+background: var(--primary-gradient);
+border-radius: 2px;
+transition: height 0.6s ease;
+}
+
+/* Reveal line as active */
+.timeline.active::before {
+height: 100%;
+}
+
+/* Step animation */
+.timeline-item {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* A-Z Services Section */
+.az-services {
+padding: 120px 0;
+background: white;
+position: relative;
+overflow: hidden;
+}
+
+.az-services::before {
+content: '';
+position: absolute;
+top: -50px;
+left: -50px;
+width: 300px;
+height: 300px;
+background: var(--primary-gradient);
+border-radius: 50%;
+opacity: 0.1;
+filter: blur(60px);
+z-index: 0;
+}
+
+.az-services .container {
+position: relative;
+z-index: 2;
+text-align: center;
+}
+
+.az-services h2 {
+font-size: clamp(2rem, 4vw, 2.8rem);
+margin-bottom: 1rem;
+color: var(--text-primary);
+font-weight: 700;
+}
+
+.az-services p.lead {
+font-size: 1.2rem;
+color: var(--text-secondary);
+max-width: 700px;
+margin: 0 auto 3rem;
+line-height: 1.6;
+}
+
+.az-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 5%;
+justify-content: center;   /* centers items in each row */
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.az-card {
+flex: 1 1 280px;            /* flexible cards with minimum width */
+max-width: 300px;           /* prevents too large stretching */
+border-radius: var(--border-radius);
+padding: 3%;
+margin-top: 40px;
+box-shadow: var(--shadow-light);
+border: 1px solid var(--border-color);
+transition: var(--transition);
+position: relative;
+overflow: hidden;
+}
+
+
+.az-card:hover {
+transform: translateY(-8px);
+box-shadow: var(--shadow-medium);
+}
+
+.az-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 5px;
+height: 100%;
+background: var(--primary-gradient);
+border-radius: var(--border-radius);
+}
+
+.az-card h4 {
+font-size: 1.3rem;
+margin-bottom: 0.8rem;
+color: var(--text-primary);
+}
+
+.az-card p {
+font-size: 1rem;
+color: var(--text-secondary);
+line-height: 1.6;
+}
+
+.az-icon {
+font-size: 2rem;
+color: #187E5F;
+margin-bottom: 1rem;
+}
+
+
+
+/* Responsive */
+@media (max-width: 600px) {
+.timeline::before {
+left: 20px;
+}
+.timeline-item {
+padding-left: 70px;
+}
+.timeline-marker {
+left: 4px;
+}
+}
+
+
+
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -1740,7 +1960,7 @@ h4 {
                         alt="Migrate Hub Logo">
                 </div>
                 <div class="logo-text">
-                    <h2 id="company_name">Migrate Hub</h2>
+                    <h2>Migrate Hub</h2>
                 </div>
             </div>
 
@@ -1758,10 +1978,10 @@ h4 {
                     <i class="fas fa-phone"></i>
                     <span>+91 8248992453</span>
                 </div>
-                <button class="cta-button" onclick="openJobSeekerForm()">Get Started</button>
+                <button class="cta-button" id="get_start_btn">Get Started</button>
             </div>
 
-            <div class="mobile-toggle">
+            <div class="mobile-toggle" id="toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1771,13 +1991,23 @@ h4 {
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-
+        <div class="hero-background">
+            <div class="hero-slide active"
+                style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80')">
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')">
+            </div>
+        </div>
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-award"></i>
-                <span>Premium Recruitment</span>
+                <span>Premium Recruitment Excellence</span>
             </div>
 
             <h1 class="hero-title">
@@ -1791,11 +2021,11 @@ h4 {
             </p>
 
             <div class="hero-actions">
-                <button class="primary-btn" onclick="openJobSeekerForm()">
+                <button class="primary-btn" id="jobSeekerheroBtn" >
                     <span>Find Your Dream Job</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
-                <button class="secondary-btn" onclick="openEmployerForm()">
+                <button class="secondary-btn" id="employerFormBtn">
                     <span>Hire Elite Talent</span>
                     <i class="fas fa-users"></i>
                 </button>
@@ -1820,14 +2050,10 @@ h4 {
                 </div>
             </div>
         </div>
-
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
     </section>
 
     <!-- Service Selection -->
-    <section class="services-selection">
+    <section class="services-selection" id="services">
         <div class="container">
             <div class="section-header">
                 <h2>How May We Assist You?</h2>
@@ -1835,7 +2061,7 @@ h4 {
             </div>
 
             <div class="service-cards">
-                <div class="service-card job-seeker" onclick="openJobSeekerForm()">
+                <div class="service-card job-seeker" id="jobSeekerCard">
                     <div class="card-background"></div>
                     <div class="card-content">
                         <div class="card-icon">
@@ -1855,7 +2081,7 @@ h4 {
                     </div>
                 </div>
 
-                <div class="service-card employer" onclick="openEmployerForm()">
+                <div class="service-card employer" id="employerFormCard">
                     <div class="card-background"></div>
                     <div class="card-content">
                         <div class="card-icon">
@@ -1945,6 +2171,95 @@ h4 {
             </div>
         </div>
     </section>
+
+    <!-- Overseas Placement Steps Section -->
+    <section id="overseas_placement_steps">
+        <div class="container">
+          <div class="section-header">
+            <h2>Key Steps Involved in Overseas Placements</h2>
+          </div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-marker">1</div>
+              <div class="timeline-content">
+                <h4>Requirement Gathering</h4>
+                <p>Company shares HR requirements and job description with the consultancy, including cultural expectations.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker">2</div>
+              <div class="timeline-content">
+                <h4>Candidate Search</h4>
+                <p>Consultancy searches its database, references, and online portals to find suitable candidates.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker">3</div>
+              <div class="timeline-content">
+                <h4>Initial Screening</h4>
+                <p>Recruiter conducts telephonic screening to assess skills, interests, and educate candidates about job roles.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker">4</div>
+              <div class="timeline-content">
+                <h4>Profile Submission</h4>
+                <p>Shortlisted candidate profiles are introduced to the employer with recruiter’s notes.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker">5</div>
+              <div class="timeline-content">
+                <h4>Employer Interviews</h4>
+                <p>Employer conducts telephonic/Skype interviews to check communication, knowledge, and soft skills.</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker">6</div>
+              <div class="timeline-content">
+                <h4>Final Selection & Relocation</h4>
+                <p>On selection, the candidate receives a job offer. Consultancy assists with relocation and onboarding support.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </section>
+
+<!-- A-Z Service Section -->
+    <section class="az-services">
+        <div class="container">
+          <h2>Our A–Z Services</h2>
+          <p class="lead">
+            From securing your dream job or hiring the perfect talent, to preparing passports, 
+            visas, clearances, and ensuring smooth overseas onboarding — we provide 
+            comprehensive end-to-end support.
+          </p>
+          <div class="az-grid">
+            <div class="az-card">
+              <div class="az-icon"><i class="fas fa-briefcase"></i></div>
+              <h4>Job Matching</h4>
+              <p>Helping candidates find the right overseas opportunities and connecting employers with the best talent.</p>
+            </div>
+            <div class="az-card">
+              <div class="az-icon"><i class="fas fa-passport"></i></div>
+              <h4>Passport & Visa</h4>
+              <p>Complete assistance in preparing passports, visas, and work permits with hassle-free processing.</p>
+            </div>
+            <div class="az-card">
+              <div class="az-icon"><i class="fas fa-file-contract"></i></div>
+              <h4>Clearance & Compliance</h4>
+              <p>Ensuring medical, legal, and documentation clearances are properly managed for a safe transition.</p>
+            </div>
+            <div class="az-card">
+              <div class="az-icon"><i class="fas fa-plane-departure"></i></div>
+              <h4>Onboarding Abroad</h4>
+              <p>Guiding you even after placement with relocation support and integration into your new workplace.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+      
+      
 
     <!-- Countries Map -->
     <section id="countries" class="countries">
@@ -2178,7 +2493,7 @@ h4 {
     <!-- Footer -->
     <footer class="footer-expandable">
         <div class="container">
-            <button class="footer-toggle" onclick="toggleFooter()">
+            <button class="footer-toggle" id="footer_toggle" >
                 <span>Explore More Links</span>
                 <i class="fas fa-chevron-down"></i>
             </button>
@@ -2249,10 +2564,10 @@ h4 {
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Career Application</h2>
-                <span class="close" onclick="closeModal('jobSeekerModal')">&times;</span>
+                <span class="close" id="close_btn" >&times;</span>
             </div>
 
-            <form class="modal-form">
+            <form class="modal-form" id="applicationForm">
                 <div class="form-row">
                     <div class="form-group">
                         <input type="text" placeholder="Full Name" required>
@@ -2300,11 +2615,19 @@ h4 {
                 </div>
 
                 <div class="form-group">
-                    <textarea placeholder="Brief description of your skills and career goals..." rows="4"
-                        required></textarea>
+                    <textarea placeholder="Brief description of your skills and career goals..." rows="4" required></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">
+                <!-- Resume Upload -->
+                <div class="form-group upload-group">
+                    <label for="resumeUpload">Upload Resume <span class="required">*</span></label>
+                    <input type="file" id="resumeUpload" required accept=".pdf,.doc,.docx">
+                    <div class="progress-container" id="progressContainer" style="display: none;">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit_btn">
                     <span>Submit Application</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
@@ -2316,7 +2639,7 @@ h4 {
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Talent Acquisition Request</h2>
-                <span class="close" onclick="closeModal('employerModal')">&times;</span>
+                <span class="close" id="employerFormCloseBtn">&times;</span>
             </div>
 
             <form class="modal-form">
@@ -2422,535 +2745,651 @@ h4 {
         </div>
     </div>
 
-    <script>
-        const text = "Elevating Careers";
-const text2 = "Globally";
-const speed = 80; // milliseconds between each character
-let index = 0;
-let index2 =0;
-
-
-// Mobile Menu Toggle
-let isMenuOpen = false;
-
-
-function typeTitle2() {
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import {getDatabase,set,get,update,remove,ref,child} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
     
-    if (index2 < text2.length) {
-      document.getElementById("second_title").innerHTML += text2.charAt(index2);
-      index2++;
-      setTimeout(typeTitle2, speed);
-      
-    }
-}
-
-function type() {
-    if (index < text.length) {
-      document.getElementById("first_title").innerHTML += text.charAt(index);
-      index++;
-      setTimeout(type, speed);
-    }else {
-        typeTitle2();
-    }
-}
-
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    const mobileToggle = document.querySelector('.mobile-toggle');
-
-    let nav_container = document.querySelector(".nav-container");
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC_22-rPogJH0swpv-P6KdnrvoRI7G3rI0",
+            authDomain: "test-74627.firebaseapp.com",
+            databaseURL: "https://test-74627-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test-74627",
+            storageBucket: "test-74627.firebasestorage.app",
+            messagingSenderId: "383560998630",
+            appId: "1:383560998630:web:5299afe3b0030b0ba96527",
+            measurementId: "G-XECWET75WS"
+        };
     
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
 
+        function uploadResumeFile() {
+            let userResumeFile = document.getElementById("resumeUpload");
+            let file = userResumeFile.files[0];
 
-    isMenuOpen = !isMenuOpen;
+            if (!file) return;
 
-    if (isMenuOpen) {
-        navMenu.classList.add('active');
-        mobileToggle.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        nav_container.style.cssText =`
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        z-index: 1000;
-        transition: var(--transition);
-        `
-        document.getElementById("company_name").style.display = 'block'
+            let reader = new FileReader();
 
-    } else {
-        navMenu.classList.remove('active');
-        mobileToggle.classList.remove('active');
-        document.body.style.overflow = 'auto';
-        nav_container.style.cssText = ` 
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: transparent; /* Fully transparent */
-        backdrop-filter: none;   /* Optional: remove blur */
-        border-bottom: none;     /* Optional: remove border */
-        z-index: 1000;
-        transition: all 0.3s ease;
-    `;
-    document.getElementById("company_name").style.display = 'none'
-    }
-}
+            reader.onload = function(e) {
+                // Convert file to Base64 (safe for text storage)
+                let base64String = e.target.result.split(',')[1];  
+                console.log(`Base64String : ${base64String}`)
+                let filePath = 'resumes/' + file.name.replace(/\./g, "_");  // dots not allowed in keys
 
-// Background Image Slider
-function initHeroSlider() {
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
-
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-
-    // Change slide every 6 seconds
-    setInterval(nextSlide, 6000);
-}
-
-// Smooth Scrolling
-function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-
-            if (target) {
-                const headerHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+                set(ref(db, filePath), {
+                    fileName: file.name,
+                    fileType: file.type,
+                    fileData: base64String
+                }).then(() => {
+                    console.log("File saved in database as text successfully!")
+                }).catch((error) => {
+                    console.log("Upload failed: " + error);
                 });
-
-                // Close mobile menu if open
-                if (isMenuOpen) {
-                    toggleMobileMenu();
-                }
-
-                // Update active nav link
-                updateActiveNavLink(this.getAttribute('href'));
-            }
-        });
-    });
-}
-
-// Update Active Navigation Link
-function updateActiveNavLink(targetHref) {
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-    });
-
-    document.querySelector(`a[href="${targetHref}"]`)?.classList.add('active');
-}
-
-// Scroll-based Navigation Active State
-function initScrollSpy() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    function updateActiveLink() {
-        const scrollPos = window.scrollY + 100;
-
-        sections.forEach(section => {
-            const top = section.offsetTop;
-            const bottom = top + section.offsetHeight;
-            const id = section.getAttribute('id');
-
-            if (scrollPos >= top && scrollPos < bottom) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                document.querySelector(`a[href="#${id}"]`)?.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink(); // Initial call
-}
-
-// Navbar Background on Scroll
-function initNavbarScroll() {
-    const navbar = document.querySelector('.navbar');
-
-    function updateNavbar() {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
+            };
+            reader.readAsDataURL(file);  // Reads file as base64 encoded string
+            console.log(`The file name is ${file.name}`)
         }
-    }
 
-    window.addEventListener('scroll', updateNavbar);
-    updateNavbar(); // Initial call
-}
 
-// Intersection Observer for Animations
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+        const text = "Elevating Careers";
+        const text2 = "Globally";
+        const speed = 80; // milliseconds between each character
+        let index = 0;
+        let index2 =0;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+        let get_start_btn = document.getElementById("get_start_btn")
+        let jobSeekerCard = document.getElementById("jobSeekerCard")
+        let jobSeekerheroBtn = document.getElementById("jobSeekerheroBtn")
+
+        let employerFormBtn = document.getElementById("employerFormBtn")
+        let employerFormCard = document.getElementById("employerFormCard")
+
+        let close_btn = document.getElementById("close_btn")
+        let employerFormCloseBtn = document.getElementById("employerFormCloseBtn")
+        let footer_toggle = document.getElementById("footer_toggle")
+
+        get_start_btn.addEventListener('click',openJobSeekerForm)
+        jobSeekerCard.addEventListener('click',openJobSeekerForm)
+        jobSeekerheroBtn.addEventListener('click',openJobSeekerForm)
+
+        employerFormBtn.addEventListener('click',openEmployerForm)
+        employerFormCard.addEventListener('click',openEmployerForm)
+
+        close_btn.addEventListener('click',()=>{
+            closeModal('jobSeekerModal')
+        })
+
+        employerFormCloseBtn.addEventListener('click',()=>{
+            closeModal('employerModal')
+        })
+
+        footer_toggle.addEventListener('click',toggleFooter)
+
+
+
+
+
+        // Mobile Menu Toggle
+        let isMenuOpen = false;
+
+
+        function typeTitle2() {
+            
+            if (index2 < text2.length) {
+            document.getElementById("second_title").innerHTML += text2.charAt(index2);
+            index2++;
+            setTimeout(typeTitle2, speed);
+            
             }
-        });
-    }, observerOptions);
+        }
 
-    // Observe elements for animation
-    document.querySelectorAll('.service-card, .feature, .metric, .contact-method').forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
-}
-
-// Counter Animation
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number, .metric .number');
-
-    const observerOptions = {
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                entry.target.classList.add('counted');
-                animateCounter(entry.target);
+        function type() {
+            if (index < text.length) {
+            document.getElementById("first_title").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+            }else {
+                typeTitle2();
             }
-        });
-    }, observerOptions);
+        }
 
-    counters.forEach(counter => observer.observe(counter));
-}
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            let toggle = document.getElementById("toggle")
 
-function animateCounter(element) {
-    const text = element.textContent;
-    const target = parseInt(text.replace(/[^\d]/g, ''));
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
+            isMenuOpen = !isMenuOpen;
 
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = text;
-            clearInterval(timer);
-        } else {
-            const currentValue = Math.floor(current);
-            if (text.includes('%')) {
-                element.textContent = currentValue + '%';
-            } else if (text.includes('+')) {
-                element.textContent = currentValue + '+';
+            if (isMenuOpen) {
+                navMenu.classList.add('active');
+                mobileToggle.classList.add('active');
+                document.body.style.overflow = 'hidden';
             } else {
-                element.textContent = currentValue;
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
         }
-    }, 16);
-}
 
-// Modal Functions
-function openJobSeekerForm() {
-    const modal = document.getElementById('jobSeekerModal');
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
+        // Background Image Slider
+        function initHeroSlider() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
 
-    // Add animation
-    setTimeout(() => {
-        modal.querySelector('.modal-content').style.transform = 'scale(1)';
-        modal.querySelector('.modal-content').style.opacity = '1';
-    }, 10);
-}
-
-function openEmployerForm() {
-    const modal = document.getElementById('employerModal');
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-
-    // Add animation
-    setTimeout(() => {
-        modal.querySelector('.modal-content').style.transform = 'scale(1)';
-        modal.querySelector('.modal-content').style.opacity = '1';
-    }, 10);
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    const modalContent = modal.querySelector('.modal-content');
-
-    modalContent.style.transform = 'scale(0.9)';
-    modalContent.style.opacity = '0';
-
-    setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }, 200);
-}
-
-// Close modal on outside click
-window.addEventListener('click', function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            closeModal(modal.id);
-        }
-    });
-});
-
-// Close modal on escape key
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const modals = document.querySelectorAll('.modal');
-        modals.forEach(modal => {
-            if (modal.style.display === 'block') {
-                closeModal(modal.id);
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
             }
-        });
-    }
-});
 
-// Form Submissions
-function initFormHandling() {
-    const forms = document.querySelectorAll('form');
+            // Change slide every 6 seconds
+            setInterval(nextSlide, 6000);
+        }
 
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Smooth Scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
 
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
+                    if (target) {
+                        const headerHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
 
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
 
-            // Simulate form submission
+                        // Close mobile menu if open
+                        if (isMenuOpen) {
+                            toggleMobileMenu();
+                        }
+
+                        // Update active nav link
+                        updateActiveNavLink(this.getAttribute('href'));
+                    }
+                });
+            });
+        }
+
+        // Update Active Navigation Link
+        function updateActiveNavLink(targetHref) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            document.querySelector(`a[href="${targetHref}"]`)?.classList.add('active');
+        }
+
+        // Scroll-based Navigation Active State
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveLink() {
+                const scrollPos = window.scrollY + 100;
+
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const bottom = top + section.offsetHeight;
+                    const id = section.getAttribute('id');
+
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        document.querySelector(`a[href="#${id}"]`)?.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // Initial call
+        }
+
+        // Navbar Background on Scroll
+        function initNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+
+            function updateNavbar() {
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                    navbar.style.boxShadow = 'none';
+                }
+            }
+
+            window.addEventListener('scroll', updateNavbar);
+            updateNavbar(); // Initial call
+        }
+
+        // Intersection Observer for Animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.service-card, .feature, .metric, .contact-method').forEach(el => {
+                el.classList.add('fade-in');
+                observer.observe(el);
+            });
+        }
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number, .metric .number');
+
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        animateCounter(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        function animateCounter(element) {
+            const text = element.textContent;
+            const target = parseInt(text.replace(/[^\d]/g, ''));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = text;
+                    clearInterval(timer);
+                } else {
+                    const currentValue = Math.floor(current);
+                    if (text.includes('%')) {
+                        element.textContent = currentValue + '%';
+                    } else if (text.includes('+')) {
+                        element.textContent = currentValue + '+';
+                    } else {
+                        element.textContent = currentValue;
+                    }
+                }
+            }, 16);
+        }
+
+        // Modal Functions
+        function openJobSeekerForm() {
+            const modal = document.getElementById('jobSeekerModal');
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+
+            // Add animation
             setTimeout(() => {
-                // Show success message
-                showNotification('Thank you! Your message has been sent successfully. We will contact you soon.', 'success');
+                modal.querySelector('.modal-content').style.transform = 'scale(1)';
+                modal.querySelector('.modal-content').style.opacity = '1';
+            }, 10);
+        }
 
-                // Reset form
-                this.reset();
+        function openEmployerForm() {
+            const modal = document.getElementById('employerModal');
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
 
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+            // Add animation
+            setTimeout(() => {
+                modal.querySelector('.modal-content').style.transform = 'scale(1)';
+                modal.querySelector('.modal-content').style.opacity = '1';
+            }, 10);
+        }
 
-                // Close modal if it's a modal form
-                if (this.closest('.modal')) {
-                    const modal = this.closest('.modal');
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('.modal-content');
+
+            modalContent.style.transform = 'scale(0.9)';
+            modalContent.style.opacity = '0';
+
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 200);
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
                     closeModal(modal.id);
                 }
-            }, 2000);
+            });
         });
-    });
-}
 
-// Notification System
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas fa-check-circle"></i>
-            <span>${message}</span>
-            <button class="close-notification">&times;</button>
-        </div>
-    `;
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
 
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: white;
-        padding: 1rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        z-index: 3000;
-        transform: translateX(400px);
-        transition: transform 0.3s ease;
-        max-width: 400px;
-        border-left: 4px solid #10b981;
-    `;
+        let employee_submit_btn = 0;
+        let submit_btn = document.getElementById("submit_btn")
+        submit_btn.addEventListener("click",()=>{
+            employee_submit_btn = 1
+        })
 
-    document.body.appendChild(notification);
 
-    // Animate in
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
+        // Form Submissions
+        function initFormHandling() {
+            const forms = document.querySelectorAll('form');
 
-    // Close button
-    notification.querySelector('.close-notification').addEventListener('click', () => {
-        closeNotification(notification);
-    });
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
 
-    // Auto close after 5 seconds
-    setTimeout(() => {
-        closeNotification(notification);
-    }, 5000);
-}
+                    const submitBtn = this.querySelector('.submit-btn');
+                    const originalText = submitBtn.innerHTML;
 
-function closeNotification(notification) {
-    notification.style.transform = 'translateX(400px)';
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.parentNode.removeChild(notification);
+                    // Show loading state
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    if (employee_submit_btn == 1){
+                        console.log("Uploading the user resume")
+                        uploadResumeFile()
+                    }
+                    // Simulate form submission
+                    setTimeout(() => {
+                        // Show success message
+                        showNotification('Thank you! Your message has been sent successfully. We will contact you soon.', 'success');
+
+                        // Reset form
+                        this.reset();
+
+                        // Reset button
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+
+                        // Close modal if it's a modal form
+                        if (this.closest('.modal')) {
+                            const modal = this.closest('.modal');
+                            closeModal(modal.id);
+                        }
+                    }, 2000);
+                });
+            });
         }
-    }, 300);
-}
 
-// Country Pin Interactions
-function initCountryPins() {
-    const pins = document.querySelectorAll('.country-pin');
+        // Notification System
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                    <button class="close-notification">&times;</button>
+                </div>
+            `;
 
-    pins.forEach(pin => {
-        pin.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.2)';
-            this.style.zIndex = '10';
-        });
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 3000;
+                transform: translateX(400px);
+                transition: transform 0.3s ease;
+                max-width: 400px;
+                border-left: 4px solid #10b981;
+            `;
 
-        pin.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-            this.style.zIndex = '1';
-        });
+            document.body.appendChild(notification);
 
-        pin.addEventListener('click', function() {
-            const country = this.getAttribute('data-country');
-            showNotification(`Explore opportunities in ${country}. Contact us for more details!`, 'info');
-        });
-    });
-}
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
 
+            // Close button
+            notification.querySelector('.close-notification').addEventListener('click', () => {
+                closeNotification(notification);
+            });
 
-
-// Footer Toggle Function
-function toggleFooter() {
-    const footer = document.querySelector('.footer-expandable');
-    const toggleIcon = document.querySelector('.footer-toggle i');
-
-    footer.classList.toggle('active');
-
-    if (footer.classList.contains('active')) {
-        toggleIcon.style.transform = 'rotate(180deg)';
-    } else {
-        toggleIcon.style.transform = 'rotate(0deg)';
-    }
-}
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
-    initHeroSlider();
-    initSmoothScrolling();
-    initScrollSpy();
-    initNavbarScroll();
-    initScrollAnimations();
-    animateCounters();
-    initFormHandling();
-    initCountryPins();
-
-
-    // Mobile menu toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', toggleMobileMenu);
-    }
-
-    // Initialize modal animations
-    document.querySelectorAll('.modal-content').forEach(content => {
-        content.style.transform = 'scale(0.9)';
-        content.style.opacity = '0';
-        content.style.transition = 'all 0.2s ease';
-    });
-
-    // Preload hero images
-    const heroImages = [
-        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
-        'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    ];
-
-    heroImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-
-    // Remove loading class if it exists
-    document.body.classList.remove('loading');
-});
-
-// Handle resize events
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 768 && isMenuOpen) {
-        toggleMobileMenu();
-    }
-});
-
-// Performance optimization: Throttle scroll events
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
+            // Auto close after 5 seconds
+            setTimeout(() => {
+                closeNotification(notification);
+            }, 5000);
         }
-    }
-}
 
-let scrollTimeout;
-let lastScrollPosition = 0;
+        function closeNotification(notification) {
+            notification.style.transform = 'translateX(400px)';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }
 
-function hideNavbars() {
-    const navbar = document.querySelector('.nav-container ');
-    const bottomNav = document.querySelector('.bottom-nav');
-    if (navbar) navbar.style.transform = 'translateY(-100%)';
-    if (bottomNav) bottomNav.style.transform = 'translateY(100%)';
-}
+        // Country Pin Interactions
+        function initCountryPins() {
+            const pins = document.querySelectorAll('.country-pin');
 
-function showNavbars() {
-    const navbar = document.querySelector('.nav-container ');
-    const bottomNav = document.querySelector('.bottom-nav');
-    if (navbar) navbar.style.transform = 'translateY(0)';
-    if (bottomNav) bottomNav.style.transform = 'translateY(0)';
-}
+            pins.forEach(pin => {
+                pin.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.2)';
+                    this.style.zIndex = '10';
+                });
 
-window.addEventListener('scroll', () => {
-    hideNavbars();
+                pin.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.zIndex = '1';
+                });
 
-    // Clear any previous timeout
-    if (scrollTimeout) clearTimeout(scrollTimeout);
-
-    // Set new timeout to show navbars after 800ms of no scroll
-    scrollTimeout = setTimeout(() => {
-        showNavbars();
-    }, 800);
-});
+                pin.addEventListener('click', function() {
+                    const country = this.getAttribute('data-country');
+                    showNotification(`Explore opportunities in ${country}. Contact us for more details!`, 'info');
+                });
+            });
+        }
 
 
-// Apply throttling to scroll events
-window.addEventListener('scroll', throttle(function() {
-    // Scroll-dependent functions go here
-}, 16)); // ~60fps
 
-type();
+        // Footer Toggle Function
+        function toggleFooter() {
+            const footer = document.querySelector('.footer-expandable');
+            const toggleIcon = document.querySelector('.footer-toggle i');
 
-       // Disable right-click context menu
-       document.addEventListener('contextmenu', function(e) {
+            footer.classList.toggle('active');
+
+            if (footer.classList.contains('active')) {
+                toggleIcon.style.transform = 'rotate(180deg)';
+            } else {
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all functionality
+            initHeroSlider();
+            initSmoothScrolling();
+            initScrollSpy();
+            initNavbarScroll();
+            initScrollAnimations();
+            animateCounters();
+            initFormHandling();
+            initCountryPins();
+
+
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            if (mobileToggle) {
+                toggle.addEventListener('click', toggleMobileMenu);
+            }
+
+            // Initialize modal animations
+            document.querySelectorAll('.modal-content').forEach(content => {
+                content.style.transform = 'scale(0.9)';
+                content.style.opacity = '0';
+                content.style.transition = 'all 0.2s ease';
+            });
+
+            // Preload hero images
+            const heroImages = [
+                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+            ];
+
+            heroImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+
+            // Remove loading class if it exists
+            document.body.classList.remove('loading');
+        });
+
+        // Handle resize events
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && isMenuOpen) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Performance optimization: Throttle scroll events
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+
+        let scrollTimeout;
+        let lastScrollPosition = 0;
+
+        function hideNavbars() {
+            const navbar = document.querySelector('.navbar');
+            const bottomNav = document.querySelector('.bottom-nav');
+            if (navbar) navbar.style.transform = 'translateY(-100%)';
+            if (bottomNav) bottomNav.style.transform = 'translateY(100%)';
+        }
+
+        function showNavbars() {
+            const navbar = document.querySelector('.navbar');
+            const bottomNav = document.querySelector('.bottom-nav');
+            if (navbar) navbar.style.transform = 'translateY(0)';
+            if (bottomNav) bottomNav.style.transform = 'translateY(0)';
+        }
+
+        document.getElementById("applicationForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent real submission for demo
+
+        let resumeFile = document.getElementById("resumeUpload").files[0];
+        let progressBar = document.getElementById("progressBar");
+        let progressContainer = document.getElementById("progressContainer");
+
+        if (resumeFile) {
+            // Show progress bar
+            progressContainer.style.display = "block";
+            progressBar.style.width = "0%";
+
+            let width = 0;
+            let interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    alert("Application submitted successfully!");
+                } else {
+                    width += 10;
+                    progressBar.style.width = width + "%";
+                }
+            }, 200);
+        }
+    });
+
+        window.addEventListener('scroll', () => {
+            hideNavbars();
+
+            // Clear any previous timeout
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+
+            // Set new timeout to show navbars after 800ms of no scroll
+            scrollTimeout = setTimeout(() => {
+                showNavbars();
+            }, 800);
+        });
+
+        // Apply throttling to scroll events
+        window.addEventListener('scroll', throttle(function() {
+            // Scroll-dependent functions go here
+        }, 16)); // ~60fps
+
+        type();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const timeline = document.querySelector(".timeline");
+          const items = document.querySelectorAll(".timeline-item");
+      
+          // Observer for timeline items
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          }, { threshold: 0.3 });
+      
+          items.forEach(item => observer.observe(item));
+      
+          // Animate timeline vertical line on scroll
+          const lineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                timeline.classList.add("active");
+              }
+            });
+          }, { threshold: 0.1 });
+      
+          lineObserver.observe(timeline);
+        });
+
+
+                // Disable right-click context menu
+                document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
 
@@ -2982,9 +3421,8 @@ type();
             e.preventDefault();
             alert('Copying is disabled on this page.');
         });
-
-
-    </script>
+      </script>
+      
 </body>
 
 </html>
