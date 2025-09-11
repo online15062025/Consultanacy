@@ -269,17 +269,50 @@
         }
 
         .hero-badge {
+            position: relative;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            padding: 12px 24px;
+            padding: 8px 16px;
             border-radius: 50px;
             margin-top: 2rem;
             font-weight: 500;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 90%;
+            text-align: center;
+            overflow: hidden; /* ensure shine stays inside */
+            font-size: 1rem;
         }
+
+        /* Shining effect */
+        .hero-badge::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-20deg);
+            animation: shine 2.5s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -75%;
+            }
+            100% {
+                left: 125%;
+            }
+        }
+
 
         .hero-title {
             font-size: clamp(2.5rem, 6vw, 4rem);
@@ -1429,6 +1462,7 @@
             }
 
             .hero-badge {
+                position: relative;
                 display: inline-flex;
                 align-items: center;
                 gap: 8px;
@@ -1441,7 +1475,37 @@
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 max-width: 90%;
                 text-align: center;
+                overflow: hidden; /* ensure shine stays inside */
+                font-size: 0.9rem;
             }
+            
+            /* Shining effect */
+            .hero-badge::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -75%;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(
+                    120deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.6) 50%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+                transform: skewX(-20deg);
+                animation: shine 2.5s infinite;
+            }
+            
+            @keyframes shine {
+                0% {
+                    left: -75%;
+                }
+                100% {
+                    left: 125%;
+                }
+            }
+            
 
             .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
@@ -1501,43 +1565,7 @@
 
 
 
-        /* Gallery Section */
-        .gallery {
-            padding: 100px 0;
-            background: white;
-        }
 
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .gallery-item {
-            flex: 1 1 300px;
-            max-width: 350px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
 
         /* Expandable Footer */
         .footer-expandable {
@@ -1952,22 +1980,82 @@
 
         /* Responsive */
         @media (max-width: 600px) {
-        .timeline::before {
-        left: 20px;
-        }
-        .timeline-item {
-        padding-left: 70px;
-        }
-        .timeline-marker {
-        left: 4px;
-        }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                padding-left: 70px;
+            }
+            .timeline-marker {
+                left: 4px;
+            }
         }
 
         #whatsapp{
             font-size: 1.7rem;
             text-align: center;
             position: relative;
-            bottom: 5px;
+            bottom: 2px;
+        }
+
+        #phone{
+            font-size: 1.3rem;
+            text-align: center;
+            position: relative;
+            top:1px;
+        }
+
+        #contact_call{
+            padding: 15px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 350px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            position: relative; /* needed for absolute text */
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Text Overlay */
+        .gallery-text {
+            position: absolute;
+            bottom: 12px;
+            left: 5%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: "Segoe UI", "Roboto", sans-serif;
+            color: var(--text-light);
+            -webkit-text-stroke: 0.8px #000;  /* thin black outline for double-line effect */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* fallback for clarity */
         }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -2048,32 +2136,13 @@
 
             <div class="hero-actions">
                 <button class="primary-btn" id="jobSeekerheroBtn" >
-                    <span>Find Your Dream Job</span>
+                    <span>Find Abroad Job</span>
                     <i class="fas fa-arrow-right"></i>
                 </button>
                 <button class="secondary-btn" id="employerFormBtn">
-                    <span>Hire Elite Talent</span>
+                    <span>Hire Employees</span>
                     <i class="fas fa-users"></i>
                 </button>
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Years in Business</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5000+</div>
-                    <div class="stat-label">Promises Delivered</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Countries Served</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Teams</div>
-                </div>
             </div>
         </div>
     </section>
@@ -2298,7 +2367,7 @@
             <div class="map-section">
                 <div class="map-container">
                     <div class="world-map">
-                        <div class="country-pin uae" data-country="UAE">
+                        <!-- <div class="country-pin uae" data-country="UAE">
                             <div class="pin-pulse"></div>
                             <div class="pin-content">
                                 <span class="country-name">UAE</span>
@@ -2336,7 +2405,7 @@
                                 <span class="country-name">Kuwait</span>
                                 <span class="job-count">800+ Jobs</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -2347,7 +2416,7 @@
 
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <i id="contact_call" class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
                             <h4>Ready to Connect?</h4>
@@ -2373,59 +2442,70 @@
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/fe/c4/30/fec43098ffdc91c247ec4da205910e39.jpg"
                         alt="Singapore">
+                    <div class="gallery-text">SINGAPORE</div>
                 </div>
-
-
+                
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/92/b1/79/92b1791393625bbb8f4d16d9a64c7873.jpg"
                         alt="Maldives">
+                    <div class="gallery-text">MALDIVES</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/736x/5d/10/8f/5d108f708cb9d480982e6c6377a86756.jpg"
                         alt="Saudi Arabia">
+                    <div class="gallery-text">SAUDI ARABIA</div>
                 </div>
+
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/0e/ab/0e/0eab0ef30bec087617ff6245b31da9dd.jpg"
                         alt="Kuwait">
+                    <div class="gallery-text">KUWAIT</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/d5/ba/b3/d5bab3ad7808482051ef3ddcb799b90d.jpg"
                         alt="New Zealand">
+                    <div class="gallery-text">NEW ZEALAND</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/1b/4e/6d/1b4e6d52fa52100a2a0670e59f632bcb.jpg"
                         alt="Netherlands">
+                    <div class="gallery-text">NETHERLANDS</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/ba/bb/e5/babbe585312fdbeada45bdced8056a65.jpg"
-                        alt="Norway">
+                    alt="Norway">
+                    <div class="gallery-text">NORWAY</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/b2/b6/eb/b2b6eb8ffe3617aca40272b3b664fdf5.jpg"
                         alt="Ireland">
+                    <div class="gallery-text">IRELAND</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/d9/c4/1b/d9c41bf304e014de52bb15ca91fa12b8.jpg"
                         alt="Canada">
+                    <div class="gallery-text">CANADA</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/26/49/02/26490286ff80f1866f0fe9165a8000af.jpg"
                         alt="Germany">
+                    <div class="gallery-text">GERMANY</div>
                 </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/736x/6a/99/ee/6a99ee843798375c5f7049316e8d31ed.jpg"
                         alt="France">
+                    <div class="gallery-text">FRANCE</div>
                 </div>
-
+                
             </div>
         </div>
     </section>
@@ -2492,14 +2572,22 @@
                             <input type="tel" placeholder="Phone Number" required>
                         </div>
 
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Select Service Type</option>
-                                <option value="job-search">Job Search Assistance</option>
-                                <option value="recruitment">Recruitment Services</option>
-                                <option value="consultation">Career Consultation</option>
-                                <option value="other">Other Inquiry</option>
-                            </select>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <!-- Collar type selection -->
+                                <select id="requestCollarType" required>
+                                    <option value="">Select Job Collar</option>
+                                    <option value="grey">Grey Collar Jobs</option>
+                                    <option value="white">White Collar Jobs</option>
+                                </select>
+                            </div>
+                        
+                            <div class="form-group">
+                                <!-- Job role dropdown will update dynamically -->
+                                <select id="requestJobRole" required>
+                                    <option value="">Select Job Role</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -2627,17 +2715,26 @@
                     <div class="form-group">
                         <input type="number" placeholder="Years of Experience" required>
                     </div>
-                    <div class="form-group">
-                        <select required>
-                            <option value="">Industry</option>
-                            <option value="technology">Technology</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="finance">Finance</option>
-                            <option value="engineering">Engineering</option>
-                            <option value="education">Education</option>
-                            <option value="other">Other</option>
-                        </select>
+
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <!-- Collar type selection -->
+                            <select id="collarType" required>
+                                <option value="">Select Job Collar</option>
+                                <option value="grey">Grey Collar Jobs</option>
+                                <option value="white">White Collar Jobs</option>
+                            </select>
+                        </div>
+                    
+                        <div class="form-group">
+                            <!-- Job role dropdown will update dynamically -->
+                            <select id="jobRole" required>
+                                <option value="">Select Job Collar for Job type</option>
+                            </select>
+                        </div>
                     </div>
+                    
                 </div>
 
                 <div class="form-group">
@@ -2698,16 +2795,22 @@
                             <option value="kuwait">Kuwait</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <select required>
-                            <option value="">Industry Type</option>
-                            <option value="technology">Technology</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="finance">Finance</option>
-                            <option value="engineering">Engineering</option>
-                            <option value="retail">Retail</option>
-                            <option value="other">Other</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <!-- Collar type selection -->
+                            <select id="EmployercollarType" required>
+                                <option value="">Select Job Collar</option>
+                                <option value="grey">Grey Collar Jobs</option>
+                                <option value="white">White Collar Jobs</option>
+                            </select>
+                        </div>
+                    
+                        <div class="form-group">
+                            <!-- Job role dropdown will update dynamically -->
+                            <select id="EmployerjobRole" required>
+                                <option value="">Select Job Collar for Job type</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -2716,7 +2819,7 @@
                         <input type="text" placeholder="Position Title" required>
                     </div>
                     <div class="form-group">
-                        <input type="number" placeholder="Number of Positions" required>
+                        <input type="number" min="0" placeholder="Number of Positions" required>
                     </div>
                 </div>
 
@@ -2766,7 +2869,7 @@
                 <i id="whatsapp" class="fab fa-whatsapp"></i>
             </a>
             <a href="tel:+918248992453" class="fab call-fab" title="Call Us">
-                <i class="fas fa-phone"></i>
+                <i id="phone" class="fas fa-phone"></i>
             </a>
         </div>
     </div>
@@ -3413,9 +3516,90 @@
           lineObserver.observe(timeline);
         });
 
-        
-        // Disable right-click context menu
-        document.addEventListener('contextmenu', function(e) {
+        const collarType = document.getElementById("collarType");
+        const jobRole = document.getElementById("jobRole");
+
+        const requestCollarType = document.getElementById("requestCollarType");
+        const requestJobRole = document.getElementById("requestJobRole");
+
+        const employerCollarType = document.getElementById("EmployercollarType");
+        const employerJobRole = document.getElementById("EmployerjobRole");
+
+        const roles = {
+            grey: [
+                "Technicians (Mechanical, Electrical, HVAC, etc.)",
+                "Drivers (Light / Heavy Vehicles)",
+                "Electricians",
+                "Plumbers",
+                "CNC Operators",
+                "Welders",
+                "Machine Operators",
+                "Factory Line Supervisors",
+                "Healthcare Assistants",
+                "Logistics Coordinators"
+            ],
+            white: [
+                "IT Professionals",
+                "Engineers",
+                "Accountants",
+                "Admin Executives",
+                "HR",
+                "Recruiters",
+                "Customer Support (Non-voice / voice)",
+                "Supervisors",
+                "Managers",
+                "Marketing",
+                "Sales Executives",
+                "Teachers",
+                "Trainers"
+            ]
+        };
+
+        collarType.addEventListener("change", function () {
+            const selected = this.value;
+            jobRole.innerHTML = '<option value="">Select Job Role</option>'; // reset first
+            
+            if (roles[selected]) {
+                roles[selected].forEach(role => {
+                    const option = document.createElement("option");
+                    option.value = role.toLowerCase().replace(/\s+/g, "_");
+                    option.textContent = role;
+                    jobRole.appendChild(option);
+                });
+            }
+        });
+
+        employerCollarType.addEventListener("change", function () {
+            const selected = this.value;
+            employerJobRole.innerHTML = '<option value="">Select Job Role</option>'; // reset first
+            
+            if (roles[selected]) {
+                roles[selected].forEach(role => {
+                    const option = document.createElement("option");
+                    option.value = role.toLowerCase().replace(/\s+/g, "_");
+                    option.textContent = role;
+                    employerJobRole.appendChild(option);
+                });
+            }
+        });
+
+        requestCollarType.addEventListener("change", function () {
+            const selected = this.value;
+            requestJobRole.innerHTML = '<option value="">Select Job Role</option>'; // reset first
+            
+            if (roles[selected]) {
+                roles[selected].forEach(role => {
+                    const option = document.createElement("option");
+                    option.value = role.toLowerCase().replace(/\s+/g, "_");
+                    option.textContent = role;
+                    requestJobRole.appendChild(option);
+                });
+            }
+        });
+
+
+                // Disable right-click context menu
+                document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
 
@@ -3447,6 +3631,7 @@
             e.preventDefault();
             alert('Copying is disabled on this page.');
         });
+        
       </script>
       
 </body>
