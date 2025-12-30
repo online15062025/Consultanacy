@@ -64,7 +64,7 @@ Old color design
 
             /* Text */
             --text-primary: #0A1F44;
-            --text-secondary: #9EA3A8;
+            --text-secondary: #6E7278;
             --text-light: #FFFFFF;
 
             /* Backgrounds */
@@ -145,7 +145,7 @@ Old color design
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1rem 24px;
+            padding: 10px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -1445,7 +1445,7 @@ Old color design
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-top: 1px solid var(--border-color);
-            padding: 1rem;
+            padding: 5px;
             z-index: 1000;
             box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
         }
@@ -1593,9 +1593,9 @@ Old color design
             }
 
             .container {
-                padding: 0 16px;
+                padding: 10px 16px;
                 max-width: 100%;
-                overflow-x: hidden;
+                overflow: hidden;
             }
 
             .hero-content {
@@ -1615,7 +1615,7 @@ Old color design
             }
 
             .nav-container {
-                padding: 1rem 16px;
+                padding: 10px;
                 max-width: 100%;
             }
 
@@ -1829,7 +1829,7 @@ Old color design
 } */
 
         #overseas_placement_steps {
-            padding: 120px 0;
+            padding: 12px 0;
             background: var(--border-color);
         }
 
@@ -1841,10 +1841,19 @@ Old color design
 
         #overseas_placement_steps h2 {
             font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
             text-align: center;
             color: var(--text-primary);
             font-weight: 600;
+        }
+
+        sup {
+            font-weight: bold;
+        }
+
+        #overseas_placement_steps .section-header {
+            margin-bottom: 2rem;
         }
 
         .timeline {
@@ -2089,7 +2098,7 @@ Old color design
 
         /* Gallery Section */
         .gallery {
-            padding: 100px 0;
+            padding: 50px 0;
             background: white;
         }
 
@@ -2198,18 +2207,16 @@ Old color design
         }
 
         .icon {
-            font-size: 40px;
+            font-size: 30px;
         }
 
         .counter {
             font-size: 36px;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .content p {
-
             font-size: 16px;
-            opacity: 0.8;
         }
 
         /* Mobile: 1 per row */
@@ -2420,8 +2427,20 @@ Old color design
             }
         }
 
+        #gallery h4 {
+            text-align: center;
+            font-size: 17px;
+            padding: 25px;
+        }
 
+        #gallery .section-header {
+            margin-bottom: 0;
+        }
 
+        .stat-box {
+            line-height: 1.5;
+            font-weight: 300;
+        }
 
         /* 
 
@@ -2618,7 +2637,7 @@ Old color design
             <div class="stat-box">
                 <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
                 <div class="content">
-                    <span class="counter" data-target="500">0</span><sup>+</sup>
+                    <span class="counter" data-target="50">0</span><sup>+</sup>
                     <p>Job Vacancies</p>
                 </div>
             </div>
@@ -2634,7 +2653,7 @@ Old color design
             <div class="stat-box">
                 <div class="icon"><i class="fa-solid fa-award"></i></div>
                 <div class="content">
-                    <span class="counter" data-target="350">0</span><sup>%</sup>
+                    <span class="counter" data-target="300">0</span><sup>+</sup>
                     <p>Satisfied Users</p>
                 </div>
             </div>
@@ -3037,17 +3056,11 @@ Old color design
                 <p>We have spread our wings on wide areas and covered almost all top developed global countries</p>
             </div>
 
+            <h4>Gulf Countries</h4>
+
             <div class="gallery-grid">
 
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/1200x/fe/c4/30/fec43098ffdc91c247ec4da205910e39.jpg" alt="Singapore">
-                    <div class="gallery-text">SINGAPORE</div>
-                </div>
-
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/1200x/92/b1/79/92b1791393625bbb8f4d16d9a64c7873.jpg" alt="Maldives">
-                    <div class="gallery-text">MALDIVES</div>
-                </div>
+                <!-- Gulf -->
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/736x/5d/10/8f/5d108f708cb9d480982e6c6377a86756.jpg"
@@ -3060,6 +3073,14 @@ Old color design
                     <img src="https://i.pinimg.com/1200x/0e/ab/0e/0eab0ef30bec087617ff6245b31da9dd.jpg" alt="Kuwait">
                     <div class="gallery-text">KUWAIT</div>
                 </div>
+
+            </div>
+
+            <h4>Europe Countries</h4>
+
+            <div class="gallery-grid">
+                <!-- Europe -->
+
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/d5/ba/b3/d5bab3ad7808482051ef3ddcb799b90d.jpg"
@@ -3083,10 +3104,6 @@ Old color design
                     <div class="gallery-text">IRELAND</div>
                 </div>
 
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/1200x/d9/c4/1b/d9c41bf304e014de52bb15ca91fa12b8.jpg" alt="Canada">
-                    <div class="gallery-text">CANADA</div>
-                </div>
 
                 <div class="gallery-item">
                     <img src="https://i.pinimg.com/1200x/26/49/02/26490286ff80f1866f0fe9165a8000af.jpg" alt="Germany">
@@ -3099,6 +3116,33 @@ Old color design
                 </div>
 
             </div>
+
+            <!-- Others -->
+
+            <h4>Other global Countries</h4>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/d9/c4/1b/d9c41bf304e014de52bb15ca91fa12b8.jpg" alt="Canada">
+                    <div class="gallery-text">CANADA</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/fe/c4/30/fec43098ffdc91c247ec4da205910e39.jpg" alt="Singapore">
+                    <div class="gallery-text">SINGAPORE</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/92/b1/79/92b1791393625bbb8f4d16d9a64c7873.jpg" alt="Maldives">
+                    <div class="gallery-text">MALDIVES</div>
+                </div>
+
+
+            </div>
+
+
+        </div>
         </div>
     </section>
 
@@ -4560,7 +4604,6 @@ Old color design
 
         observer.observe(document.querySelector('#stats'));
 
-
         // Disable right-click context menu
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
@@ -4596,11 +4639,6 @@ Old color design
         });
 
     </script>
-
-
 </body>
 
 </html>
-
-
-
