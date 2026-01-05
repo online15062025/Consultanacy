@@ -74,7 +74,9 @@ Old color design
             --bg-secondary: #E6E6E6;
 
             /* Borders & UI */
-            --border-color: #e6f0ff;
+            --border-color: #9EA3A8;
+            --light-blue-color: #e6f0ff;
+            --light-grey-bg: #E6E6E6;
             --card-tone-color: linear-gradient(135deg,
                     #0A1F44 0%,
                     #081833 100%);
@@ -528,7 +530,7 @@ Old color design
 
         .section-header p {
             font-size: 1rem;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             max-width: 600px;
             margin: 0 auto;
             font-weight: 400;
@@ -544,7 +546,7 @@ Old color design
 
         .service-card {
             position: relative;
-            background: white;
+            background: var(--light-grey-bg);
             border-radius: 24px;
             padding: 3rem 2.5rem;
             cursor: pointer;
@@ -566,7 +568,7 @@ Old color design
         }
 
         .job-seeker .card-background {
-            background: var(--primary-gradient);
+            background: var(--light-blue-color);
         }
 
         .employer .card-background {
@@ -629,11 +631,11 @@ Old color design
             align-items: center;
             gap: 12px;
             margin-bottom: 1rem;
-            color: var(--text-secondary);
+            color: var(--text-primary);
         }
 
         .benefits i {
-            color: #0A1F44;
+            color: green;
             font-size: 0.9rem;
         }
 
@@ -660,7 +662,7 @@ Old color design
 
         /* About Section */
         .about {
-            padding: 120px 0;
+            padding: 50px 0;
             background: white;
         }
 
@@ -683,7 +685,7 @@ Old color design
         }
 
         .about h2 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 5vw, 2.8rem);
             margin-bottom: 1.5rem;
             color: var(--text-primary);
         }
@@ -743,7 +745,7 @@ Old color design
 } */
 
         .visual-card {
-            background: var(--border-color);
+            background: var(--light-grey-bg);
             border-radius: 24px;
             padding: 3rem 2rem;
             box-shadow: var(--shadow-light);
@@ -1510,6 +1512,18 @@ Old color design
         @media (max-width: 768px) {
 
 
+            .visual-card {
+                width: 100%;
+                height: 50vh;
+            }
+
+            .lead {
+                font-size: 1.1rem;
+            }
+
+            #faq_section .section-header {
+                margin-bottom: 0rem;
+            }
 
             .logo {
                 width: 100%;
@@ -1832,7 +1846,7 @@ Old color design
 
         #overseas_placement_steps {
             padding: 12px 0;
-            background: var(--border-color);
+            background: white;
         }
 
         #overseas_placement_steps .container {
@@ -1904,7 +1918,7 @@ Old color design
         }
 
         .timeline-content {
-            background: white;
+            background: var(--light-grey-bg);
             border-radius: var(--border-radius);
             padding: 1.5rem 2rem;
             box-shadow: var(--shadow-light);
@@ -2179,7 +2193,6 @@ Old color design
 
         .stats-section {
             padding: 50px 20px;
-            background: var(--bg-primary);
             color: #fff;
         }
 
@@ -2190,7 +2203,7 @@ Old color design
             justify-content: space-between;
             max-width: 1000px;
             margin: auto;
-            background: var(--border-color);
+            background: var(--light-grey-bg);
             padding: 20px 15px;
             border-radius: 25px;
         }
@@ -2203,7 +2216,7 @@ Old color design
             align-items: center;
             text-align: center;
             padding: 20px;
-            background: var(--bg-primary);
+            background: var(--light-grey-bg);
             color: var(--text-primary);
             border-radius: 8px;
         }
@@ -2369,7 +2382,6 @@ Old color design
             }
         }
 
-
         .card-section {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -2388,7 +2400,7 @@ Old color design
 
         .card h3 {
             margin-bottom: 10px;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .card img {
@@ -2444,6 +2456,64 @@ Old color design
             font-weight: 300;
         }
 
+        .faq {
+            max-width: 80%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        #faq_section .section-header h2 {
+            padding: 0px 12px 0px 12px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question:hover {
+            background-color: #f5f5f5;
+        }
+
+        .icon {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 15px;
+        }
+
+        .faq-answer p {
+            margin: 15px 0;
+        }
+
+        .visual-card {
+            background-image: url("https://i.pinimg.com/736x/d0/cb/26/d0cb26b6a3bd06e365b3512abbab93f0.jpg");
+            background-size: cover;
+            background-position: calc(70% - 10px) bottom;
+            background-repeat: no-repeat;
+            background-color: #000;
+            width: 100%;
+            height: 100vh;
+        }
+
+
         /* 
 
 .hero{
@@ -2493,6 +2563,20 @@ Old color design
     filter:opacity(0.8)
   }
 } */
+
+
+
+
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+
+
+            .visual-card {
+                width: 100%;
+                height: 50vh;
+            }
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -2584,7 +2668,7 @@ Old color design
                             <path d="M17 8.5L10.5 15L7 11.5" stroke="white" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-                        Genuine and trustful job offers</li>
+                        Trusted Consultancy</li>
                     <li><svg width="24" height="24" viewBox="0 0 24 24" fill="#11a84d"
                             xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="12" fill="#11a84d" />
@@ -2592,20 +2676,6 @@ Old color design
                                 stroke-linejoin="round" />
                         </svg>
                         100% Success Rate</li>
-                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="#11a84d"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="12" fill="#11a84d" />
-                            <path d="M17 8.5L10.5 15L7 11.5" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        Secure Document Handling</li>
-                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="#11a84d"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="12" fill="#11a84d" />
-                            <path d="M17 8.5L10.5 15L7 11.5" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        Fast Processing & 24x7 Support</li>
                 </ul>
             </div>
 
@@ -2616,201 +2686,12 @@ Old color design
                     <i class="fas fa-arrow-right"></i>
                 </button>
                 <button class="secondary-btn" id="employerFormBtn">
-                    <span>Hire Employees</span>
+                    <span>Recruit Employees</span>
                     <i class="fas fa-users"></i>
                 </button>
             </div>
         </div>
 
-    </section>
-
-
-    <section class="stats-section" id="stats">
-        <div class="stats-container">
-
-            <div class="stat-box">
-                <div class="icon"><i class="fa-solid fa-earth-americas"></i></div>
-                <div class="content">
-                    <span class="counter" data-target="33">0</span><sup>+</sup>
-                    <p>Countries</p>
-                </div>
-            </div>
-
-            <div class="stat-box">
-                <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
-                <div class="content">
-                    <span class="counter" data-target="50">0</span><sup>+</sup>
-                    <p>Job Vacancies</p>
-                </div>
-            </div>
-
-            <div class="stat-box">
-                <div class="icon"><i class="fa-solid fa-user-gear"></i></div>
-                <div class="content">
-                    <span class="counter" data-target="300">0</span><sup>+</sup>
-                    <p>People Hired</p>
-                </div>
-            </div>
-
-            <div class="stat-box">
-                <div class="icon"><i class="fa-solid fa-award"></i></div>
-                <div class="content">
-                    <span class="counter" data-target="300">0</span><sup>+</sup>
-                    <p>Satisfied Users</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-
-
-    <!-- Service Selection -->
-    <section class="services-selection" id="services">
-
-        <div class="container">
-            <div class="section-header">
-                <h2>Our team works on a wide sector</h2>
-                <p>We cover all job sector starting from hotel managemnet to software industries</p>
-            </div>
-
-            <section class="card-section">
-                <div class="card">
-                    <h3>Farming</h3>
-                    <img src="https://i.pinimg.com/736x/11/ba/f6/11baf6c33a7078af8800a7a545bc218f.jpg" alt="Farmimg">
-                </div>
-
-                <div class="card">
-                    <h3>Logistics</h3>
-                    <img src="https://i.pinimg.com/736x/fb/59/dc/fb59dce6cfb9d64301291fd1196f38a1.jpg" alt="Logistics">
-                </div>
-
-                <div class="card">
-                    <h3>Chef</h3>
-                    <img src="https://i.pinimg.com/1200x/bd/9a/47/bd9a475244f128fffa78c6a6a953050d.jpg" alt="Chef">
-                </div>
-
-                <div class="card">
-                    <h3>Management</h3>
-                    <img src="https://i.pinimg.com/736x/29/2f/23/292f23a0c547fd88c290e1d6e8119a92.jpg" alt="Management">
-                </div>
-
-                <div class="card">
-                    <h3>Retail</h3>
-                    <img src="https://i.pinimg.com/736x/e2/9c/f1/e29cf14f10f48e891b795819c44b75f6.jpg" alt="Retail">
-                </div>
-
-                <div class="card">
-                    <h3>Husbandry</h3>
-                    <img src="https://i.pinimg.com/1200x/5f/13/16/5f1316121f9adbc4f142e627f03cd623.jpg" alt="Husbandry">
-                </div>
-
-                <div class="card">
-                    <h3>Warehouse</h3>
-                    <img src="https://i.pinimg.com/736x/9b/d7/64/9bd764becfbb7985c31542af24b6fe20.jpg" alt="Warehouse">
-                </div>
-
-                <div class="card">
-                    <h3>Super Market</h3>
-                    <img src="https://i.pinimg.com/736x/a4/be/23/a4be231c9a023c30820a97fd1ff69be9.jpg"
-                        alt="Super Market">
-                </div>
-
-                <div class="card">
-                    <h3>Oil Rig</h3>
-                    <img src="https://i.pinimg.com/736x/a2/99/8c/a2998c5fb3af5345a29a2e0764a36c33.jpg" alt="Oil Rig">
-                </div>
-
-                <div class="card">
-                    <h3>Technicians</h3>
-                    <img src="https://i.pinimg.com/1200x/90/ee/ee/90eeee5965a113f1b535c5bb5e2356e6.jpg"
-                        alt="Technicians">
-                </div>
-
-                <div class="card">
-                    <h3>Construction</h3>
-                    <img src="https://i.pinimg.com/736x/d0/ca/19/d0ca19cdc974a40c230f0be23da832e6.jpg"
-                        alt="Construction">
-                </div>
-
-                <div class="card">
-                    <h3>Lab</h3>
-                    <img src="https://i.pinimg.com/1200x/a5/f0/1b/a5f01bc542a24e467d496eb1a6ca999d.jpg" alt="Lab">
-                </div>
-
-                <div class="card">
-                    <h3>Automobile</h3>
-                    <img src="https://i.pinimg.com/736x/3e/57/c6/3e57c680896c04cf818bbfe8a7639207.jpg" alt="Automobile">
-                </div>
-
-                <div class="card">
-                    <h3>Hotel</h3>
-                    <img src="https://i.pinimg.com/736x/4f/59/12/4f59126b8417ae3abf62845ee949b516.jpg"
-                        alt="Hotel Management">
-                </div>
-
-                <div class="card">
-                    <h3>Software</h3>
-                    <img src="https://i.pinimg.com/736x/96/d1/cc/96d1cc416bfc7a2a0a16feb235f1defa.jpg" alt="Software">
-                </div>
-
-                <div class="card">
-                    <h3>Ships</h3>
-                    <img src="https://i.pinimg.com/736x/1e/ee/69/1eee6983949efb8399f80f4ccc2093d1.jpg" alt="Ships">
-                </div>
-            </section>
-
-            <div class="section-header">
-                <h2>Your safe path, to global jobs</h2>
-                <p>Choose your right path for a safe job by reaching us. Our vast network supports both employee and
-                    employers</p>
-            </div>
-
-            <div class="service-cards">
-                <div class="service-card job-seeker" id="jobSeekerCard">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Looking for a Job ?</h3>
-                        <p>Unlock premium international opportunities tailored to your expertise and aspirations</p>
-                        <ul class="benefits">
-                            <li><i class="fas fa-check"></i> Executive Placement</li>
-                            <li><i class="fas fa-check"></i> Visa Assistance</li>
-                            <li><i class="fas fa-check"></i> Career Guidance</li>
-                        </ul>
-                        <button class="card-btn">
-                            <span>Apply Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="service-card employer" id="employerFormCard">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <h3>Looking for employee ?</h3>
-                        <p>Access our exclusive network of professionals and drive your business forward</p>
-                        <ul class="benefits">
-                            <li><i class="fas fa-check"></i> Pre-screened Candidates</li>
-                            <li><i class="fas fa-check"></i> Quick Posting</li>
-                            <li><i class="fas fa-check"></i> Quality Guarantee</li>
-                        </ul>
-                        <button class="card-btn">
-                            <span>Hire Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- About Section -->
@@ -2819,7 +2700,7 @@ Old color design
             <div class="about-grid">
                 <div class="about-content">
                     <div class="section-badge">Excellence Since 2010</div>
-                    <h2>Legal overseas placements from TamilNadu and Puducherry</h2>
+                    <h2>Welcome to Migrate Hub, a Legal overseas placements from South India</h2>
                     <p class="lead">We provide premier and trustful jobs by connecting you with world-class
                         opportunities across multiple continents.</p>
 
@@ -2859,27 +2740,110 @@ Old color design
                 <div class="about-visual">
                     <div class="visual-card">
                         <div class="card-header">
-                            <h3>Proven Results</h3>
-                        </div>
-                        <div class="metrics">
-                            <div class="metric">
-                                <span class="number">15+</span>
-                                <span class="label">Countries</span>
-                            </div>
-                            <div class="metric">
-                                <span class="number">500+</span>
-                                <span class="label">Companies</span>
-                            </div>
-                            <div class="metric">
-                                <span class="number">50K+</span>
-                                <span class="label">Professionals</span>
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+    <!-- Service Selection -->
+    <section class="services-selection" id="services">
+
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Your safe path, to global jobs</h2>
+                <p>Choose your right path for a safe job by reaching us. Our vast network supports both employee and
+                    employers</p>
+            </div>
+
+            <!-- <section class="stats-section" id="stats">
+        <div class="stats-container">
+
+            <div class="stat-box">
+                <div class="icon"><i class="fa-solid fa-earth-americas"></i></div>
+                <div class="content">
+                    <span class="counter" data-target="33">0</span><sup>+</sup>
+                    <p>Countries</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="content">
+                    <span class="counter" data-target="50">0</span><sup>+</sup>
+                    <p>Job Vacancies</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="icon"><i class="fa-solid fa-user-gear"></i></div>
+                <div class="content">
+                    <span class="counter" data-target="300">0</span><sup>+</sup>
+                    <p>People Hired</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="icon"><i class="fa-solid fa-award"></i></div>
+                <div class="content">
+                    <span class="counter" data-target="300">0</span><sup>+</sup>
+                    <p>Satisfied Users</p>
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+
+            <div class="service-cards">
+                <div class="service-card job-seeker" id="jobSeekerCard">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Looking for a Job ?</h3>
+                        <p>Unlock premium international opportunities tailored to your expertise and aspirations</p>
+                        <ul class="benefits">
+                            <li><i class="fas fa-check"></i> Executive Placement</li>
+                            <li><i class="fas fa-check"></i> Visa Assistance</li>
+                            <li><i class="fas fa-check"></i> Career Guidance</li>
+                        </ul>
+                        <button class="card-btn">
+                            <span>Apply Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="service-card employer" id="employerFormCard">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Looking for employee ?</h3>
+                        <p>Access our exclusive network of professionals and drive your business forward</p>
+                        <ul class="benefits">
+                            <li><i class="fas fa-check"></i> Pre-screened Candidates</li>
+                            <li><i class="fas fa-check"></i> Quick Posting</li>
+                            <li><i class="fas fa-check"></i> Quality Guarantee</li>
+                        </ul>
+                        <button class="card-btn">
+                            <span>Recruit Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Overseas Placement Steps Section -->
     <section id="overseas_placement_steps">
@@ -2950,25 +2914,24 @@ Old color design
                 <div class="az-card">
                     <div class="az-icon"><i class="fas fa-briefcase"></i></div>
                     <h4>Job Matching</h4>
-                    <p>Helping candidates find the right overseas opportunities and connecting employers with the best
-                        talent.</p>
+                    <p>Helping candidates find the right abroad opportunities</p>
                 </div>
                 <div class="az-card">
                     <div class="az-icon"><i class="fas fa-passport"></i></div>
                     <h4>Passport & Visa</h4>
-                    <p>Complete assistance in preparing passports, visas, and work permits with hassle-free processing.
+                    <p>Complete assistance in preparing passports, visas, and work permits.
                     </p>
                 </div>
                 <div class="az-card">
                     <div class="az-icon"><i class="fas fa-file-contract"></i></div>
                     <h4>Clearance & Compliance</h4>
-                    <p>Ensuring medical, legal, and documentation clearances are properly managed for a safe transition.
+                    <p>Ensuring medical, legal, and documentation clearances.
                     </p>
                 </div>
                 <div class="az-card">
                     <div class="az-icon"><i class="fas fa-plane-departure"></i></div>
                     <h4>Onboarding Abroad</h4>
-                    <p>Guiding you even after placement with relocation support and integration into your new workplace.
+                    <p>Guidance on relocation support into your new workplace.
                     </p>
                 </div>
             </div>
@@ -2977,82 +2940,104 @@ Old color design
 
 
 
-    <!-- Countries Map -->
-    <section id="countries" class="countries">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Global Network</h2>
-                <p>Connecting talent across continents with precision and care</p>
-            </div>
-
-            <div class="map-section">
-                <div class="map-container">
-                    <div class="world-map">
-                        <!-- <div class="country-pin uae" data-country="UAE">
-                            <div class="pin-pulse"></div>
-                            <div class="pin-content">
-                                <span class="country-name">UAE</span>
-                                <span class="job-count">2500+ Jobs</span>
-                            </div>
-                        </div>
-
-                        <div class="country-pin saudi" data-country="Saudi Arabia">
-                            <div class="pin-pulse"></div>
-                            <div class="pin-content">
-                                <span class="country-name">Saudi</span>
-                                <span class="job-count">1800+ Jobs</span>
-                            </div>
-                        </div>
-
-                        <div class="country-pin qatar" data-country="Qatar">
-                            <div class="pin-pulse"></div>
-                            <div class="pin-content">
-                                <span class="country-name">Qatar</span>
-                                <span class="job-count">1200+ Jobs</span>
-                            </div>
-                        </div>
-
-                        <div class="country-pin oman" data-country="Oman">
-                            <div class="pin-pulse"></div>
-                            <div class="pin-content">
-                                <span class="country-name">Oman</span>
-                                <span class="job-count">900+ Jobs</span>
-                            </div>
-                        </div>
-
-                        <div class="country-pin kuwait" data-country="Kuwait">
-                            <div class="pin-pulse"></div>
-                            <div class="pin-content">
-                                <span class="country-name">Kuwait</span>
-                                <span class="job-count">800+ Jobs</span>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class="map-info">
-                    <h3>Strategic Placement Excellence</h3>
-                    <p>Our extensive network spans the most dynamic economies in the Middle East, offering unparalleled
-                        opportunities for career growth and business expansion.</p>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i id="contact_call" class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Ready to Connect?</h4>
-                            <p>Speak with our placement specialists</p>
-                            <a href="tel:+919994747116" class="contact-number">+91 999 474 7116</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
+
+            <div class="section-header">
+                <h2>Our team works on a wide sector</h2>
+                <p>We cover all job sector starting from hotel managemnet to software industries</p>
+            </div>
+
+            <section class="card-section">
+                <div class="card">
+                    <h3>Agricultural</h3>
+                    <img src="https://i.pinimg.com/736x/11/ba/f6/11baf6c33a7078af8800a7a545bc218f.jpg" alt="Farmimg">
+                </div>
+
+                <div class="card">
+                    <h3>Logistics & Supply chain</h3>
+                    <img src="https://i.pinimg.com/736x/fb/59/dc/fb59dce6cfb9d64301291fd1196f38a1.jpg" alt="Logistics">
+                </div>
+
+                <div class="card">
+                    <h3>Food Industry/QRS</h3>
+                    <img src="https://i.pinimg.com/1200x/bd/9a/47/bd9a475244f128fffa78c6a6a953050d.jpg" alt="Chef">
+                </div>
+
+                <div class="card">
+                    <h3>Facility Maintenance</h3>
+                    <img src="https://i.pinimg.com/736x/29/2f/23/292f23a0c547fd88c290e1d6e8119a92.jpg" alt="Management">
+                </div>
+
+                <div class="card">
+                    <h3>Super Market</h3>
+                    <img src="https://i.pinimg.com/736x/e2/9c/f1/e29cf14f10f48e891b795819c44b75f6.jpg" alt="Retail">
+                </div>
+
+                <div class="card">
+                    <h3>Dairy & Poultry</h3>
+                    <img src="https://i.pinimg.com/1200x/5f/13/16/5f1316121f9adbc4f142e627f03cd623.jpg" alt="Husbandry">
+                </div>
+
+                <div class="card">
+                    <h3>Retail Industry</h3>
+                    <img src="https://i.pinimg.com/736x/9b/d7/64/9bd764becfbb7985c31542af24b6fe20.jpg" alt="Warehouse">
+                </div>
+
+                <div class="card">
+                    <h3>FMCG Sector</h3>
+                    <img src="https://i.pinimg.com/736x/a4/be/23/a4be231c9a023c30820a97fd1ff69be9.jpg"
+                        alt="Super Market">
+                </div>
+
+                <div class="card">
+                    <h3>Oil & Gas</h3>
+                    <img src="https://i.pinimg.com/736x/a2/99/8c/a2998c5fb3af5345a29a2e0764a36c33.jpg" alt="Oil Rig">
+                </div>
+
+                <div class="card">
+                    <h3>Operation & Maintenance</h3>
+                    <img src="https://i.pinimg.com/1200x/90/ee/ee/90eeee5965a113f1b535c5bb5e2356e6.jpg"
+                        alt="Technicians">
+                </div>
+
+                <div class="card">
+                    <h3>Civil Infrastructure</h3>
+                    <img src="https://i.pinimg.com/736x/d0/ca/19/d0ca19cdc974a40c230f0be23da832e6.jpg"
+                        alt="Construction">
+                </div>
+
+                <div class="card">
+                    <h3>Manufacturing</h3>
+                    <img src="https://i.pinimg.com/1200x/a5/f0/1b/a5f01bc542a24e467d496eb1a6ca999d.jpg" alt="Lab">
+                </div>
+
+                <div class="card">
+                    <h3>Automobile Industry/h3>
+                        <img src="https://i.pinimg.com/736x/3e/57/c6/3e57c680896c04cf818bbfe8a7639207.jpg"
+                            alt="Automobile">
+                </div>
+
+                <div class="card">
+                    <h3>Hospitality Industry</h3>
+                    <img src="https://i.pinimg.com/736x/4f/59/12/4f59126b8417ae3abf62845ee949b516.jpg"
+                        alt="Hotel Management">
+                </div>
+
+                <div class="card">
+                    <h3>Information Technology</h3>
+                    <img src="https://i.pinimg.com/736x/96/d1/cc/96d1cc416bfc7a2a0a16feb235f1defa.jpg" alt="Software">
+                </div>
+
+                <div class="card">
+                    <h3>Shipyard Industry</h3>
+                    <img src="https://i.pinimg.com/736x/1e/ee/69/1eee6983949efb8399f80f4ccc2093d1.jpg" alt="Ships">
+                </div>
+            </section>
+
+
+
             <div class="section-header">
                 <h2>Countries our network work on</h2>
                 <p>We have spread our wings on wide areas and covered almost all top developed global countries</p>
@@ -3146,6 +3131,67 @@ Old color design
 
         </div>
         </div>
+    </section>
+
+
+    <section id="faq_section">
+
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What is your return policy?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We accept returns within 30 days of purchase with a valid receipt.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    How long does shipping take?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Shipping usually takes 5–7 business days.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you offer customer support?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, our support team is available 24/7 via email and chat.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I change my order?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Orders can be changed within 24 hours of placing them.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you ship internationally?
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we ship to most countries worldwide.</p>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- Contact Section -->
@@ -4607,6 +4653,20 @@ Old color design
         observer.observe(document.querySelector('#stats'));
 
 
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('.icon');
+
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.textContent = '+';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.textContent = '−';
+                }
+            });
+        });
 
         // Disable right-click context menu
         document.addEventListener('contextmenu', function (e) {
@@ -4641,8 +4701,8 @@ Old color design
             e.preventDefault();
             alert('Copying is disabled on this page.');
         });
-    </script>
 
+    </script>
 
 </body>
 
